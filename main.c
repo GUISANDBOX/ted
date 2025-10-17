@@ -39,13 +39,12 @@ int main(int argc, char *argv[]) {
     int i=1;
     float x, y, x1, x2, y1, y2, r, w, h;
     char corb[100], corp[100], cor[100], txto[100], fFamily[100], fWeight[100], fSize[100];
-    printf("Argumentos: %d\n", argc);
+    
     while (i < argc){
          if (strcmp(argv[i],"-e")==0){
              i++;
              /* se i >= argc: ERRO-falta parametro */
              trataPath(dir,PATH_LEN, argv[i]);
-             printf("LIDO DIRETORIO E: %s\n", dir);
              strcpy(bed, dir);
          }
          else if (strcmp(argv[i],"-f") == 0){
@@ -226,7 +225,7 @@ int main(int argc, char *argv[]) {
     exibirfila(filasaida, filesaidaquery);
     fprintf(filesaidaquery, "</svg>\n");
     fclose(filesaidaquery);
-	printf("Fim do programa\n");
+	printf("Sucesso!\n");
 
 
     return 0;
