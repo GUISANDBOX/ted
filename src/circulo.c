@@ -24,6 +24,15 @@ Circulo criaCirculo(Ponto centro, float raio, char corb[100], char corp[100], in
     return (Circulo)c;
 }
 
+Circulo movecirculo(Circulo c, double xdisp, double ydisp, double dx, double dy) {
+    struct sCirculo *circ = c;
+    double nx = xdisp + dx;
+    double ny = ydisp + dy;
+    Ponto novo = criaPonto(nx, ny);
+    circ->centro = novo;
+    return circ;
+}
+
 void printCirculo(Circulo c, FILE *arq) {
     struct sCirculo *circ = c;
     printf("\n\nID: %i\n", circ->id);

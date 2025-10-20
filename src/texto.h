@@ -13,4 +13,7 @@ Texto criaTexto(Ponto ponto, char corb[100], char corp[100], char txto[100], cha
 void printTexto(Texto t, FILE *arq);
 //imprime informações do texto
 
+Texto movetexto(Texto r, double xdisp, double ydisp, double dx, double dy);
+//move o texto para uma nova posição
+
 #endif

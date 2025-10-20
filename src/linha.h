@@ -13,4 +13,7 @@ Linha criaLinha(Ponto p1, Ponto p2, char cor[], int id);
 void printLinha(Linha l, FILE *arq);
 //imprime informações da linha
 
+Linha movelinha(Linha r, double xdisp, double ydisp, double dx, double dy);
+//move a linha para uma nova posição
+
 #endif

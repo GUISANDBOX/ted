@@ -32,6 +32,15 @@ Texto criaTexto(Ponto ponto, char corb[100], char corp[100], char txto[100], cha
     return (Texto)t;
 }
 
+Texto movetexto(Texto t, double xdisp, double ydisp, double dx, double dy) {
+    struct sTexto *tex = t;
+    double nx = xdisp + dx;
+    double ny = ydisp + dy;
+    Ponto novo = criaPonto(nx, ny);
+    tex->ponto = novo;
+    return tex;
+}
+
 void printTexto(Texto t, FILE *arq) {
     struct sTexto *tex = t;
     printf("\n\nID: %i\n", tex->id);
@@ -39,5 +48,5 @@ void printTexto(Texto t, FILE *arq) {
     printf("Cores borda/preenchimento: %s/%s \n", tex->corb, tex->corp);
     printf("Texto: %s \n", tex->txto);
     printf("Família/Peso/Tamanho: %s/%s/%s \n", tex->currentFFamily, tex->currentFWeight, tex->currentFSize);
-    criatexto(tex->id, getX(tex->ponto), getY(tex->ponto), tex->corb, tex->corp, tex->ancora, tex->currentFFamily, tex->currentFWeight, tex->currentFSize, tex->txto, arq);
+    criatexto(tex->id, getX(tex->ponto), getY(tex->ponto), tex->corb, tex->corp, tex->ancora, tex->txto, tex->currentFFamily, tex->currentFWeight, tex->currentFSize, arq);
 }
