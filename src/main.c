@@ -159,6 +159,9 @@ int main(int argc, char *argv[]) {
     Pilha listacarr[100];
     int tipo, j, n;
     int iesq, idir;
+    for (j=0; j<100; j++) {
+        listacarr[j] = criapilha(0);
+    }
 
     Fila filasaida = criafila(0);
 
@@ -175,7 +178,6 @@ int main(int argc, char *argv[]) {
             Disparador disp;
             disp = criaDisparador(i, x, y); 
             listadisp[i] = disp;
-
             printf("Disparador %d criado!\n", iddisparador(listadisp[i]));
         }
         else if (!strcmp(comando, "lc")) {
@@ -193,25 +195,42 @@ int main(int argc, char *argv[]) {
             //exibir(listacarr[i]);
         }
         else if (!strcmp(comando, "atch")) {
-            
             fscanf(fileq, "%d %d %d", &i, &iesq, &idir);
             printf("Encaixando disparadores!\n");
             Disparador disp = listadisp[i];
-
             Pilha pilhaesq = listacarr[iesq];
             Pilha pilhadir = listacarr[idir];
             encaixar(disp, pilhaesq, pilhadir);
             printf("Encaixe realizado!\n");
         }
         else if (!strcmp(comando, "rjd")) {
-            fscanf(fileq, "%f %f %f %f", &x1, &y1, &x2, &y2);
+            fscanf(fileq, "%i %c %f %f %f %f", &i, &a, &x1, &y1, &x2, &y2);
+            printf("REALIZANDO RAJADA\n");
+            Pilha pilhadodisparador;
+            if(a=='d'){
+                printf("entrou no if da rajada\n");
+                pilhadodisparador = getPilhaEsq(listadisp[i]);
+                exibir(pilhadodisparador);
+            }
+            else{
+                printf("entrou no else da rajada\n");
+                pilhadodisparador = getPilhaDir(listadisp[i]);
+                exibir(pilhadodisparador);
+            }
+            while(pilhavazia(pilhadodisparador)==0){
+                printf("entrou no while da rajada\n");
+                pilhadodisparador = botao(listadisp[i], a);
+                printf("Disparando um objeto: %d\n", tipoatualnodisparo(listadisp[i]));
+                adicionar(&filasaida, disparar(listadisp[i], x1, y1), tipoatualnodisparo(listadisp[i]));
+                x1+=x2;
+                y1+=y2;
+            }
         }
         else if (!strcmp(comando, "shft")) {
-            
             fscanf(fileq, "%i %c %i", &i, &a, &n);
             printf("REALIZANDO SHIFT\n");
             for (int j=0; j<n; j++) {
-                 botao(listadisp[i], a);
+                botao(listadisp[i], a);
             }
             printf("SHIFT REALIZADO PARA %c\n", a);
         }

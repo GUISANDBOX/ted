@@ -2,8 +2,10 @@
 #include "disparador.h"
 #include "circulo.h"
 #include "retangulo.h"
-#include<stdlib.h>
-#include<stdio.h>
+#include "linha.h"
+#include "texto.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 struct sDisparador {
     int id;
@@ -30,32 +32,52 @@ void encaixar(Disparador d, Pilha esq, Pilha dir) {
     disp->dir = dir;
 }
 
-void botao(Disparador d, char lado) {
+Pilha botao(Disparador d, char lado) {
     // Botão esquerdo
+    printf("Apertando o botao %c do disparador\n", lado);
     struct sDisparador *disp = (struct sDisparador *)d;
     int tipo;
+    printf("Estado antes do botao: ");
     if (lado=='e') {
         printf("BOTAO E no disparador %d; ", disp->id);
+        exibir(disp->dir);
+        Item obj = desempilha(&(disp->dir), &tipo);
+        printf("POP FEITO de um %d ", tipo);
+        if (disp->disparo!=NULL) { // Está vazio inicialmente
+            empilha(disp->esq, disp->disparo, tipo);
+        }
+        disp->disparo = obj;
+        disp->tipo = tipo;
+        return disp->esq;
+    }
+    else {
+        printf("BOTAO D no disparador %d; ", disp->id);
         exibir(disp->esq);
-        Item obj = desempilha(&(disp->esq), &tipo);
-         printf("POP FEITO de um %d ", tipo);
+        Item obj = desempilha(&(disp->dir), &tipo);
+        printf("POP FEITO de um %d ", tipo);
         if (disp->disparo!=NULL) { // Está vazio inicialmente
             empilha(disp->dir, disp->disparo, tipo);
         }
         disp->disparo = obj;
         disp->tipo = tipo;
+        return disp->dir;
     }
-    // TODO implementar a lógica do 'd'
 }
 
 Item disparar(Disparador d, double dx, double dy) {
     struct sDisparador *disp = (struct sDisparador *)d;
     Item itemdisparo;
     if (disp->tipo==0) { // Circuulo
-
+        itemdisparo = movecirculo(disp->disparo, disp->x, disp->y, dx, dy);
     }
     else if (disp->tipo==1) {
         itemdisparo = moveretangulo(disp->disparo, disp->x, disp->y, dx, dy);
+    }
+    else if (disp->tipo==2) {
+        itemdisparo = movelinha(disp->disparo, disp->x, disp->y, dx, dy);
+    }
+    else if (disp->tipo==3) {
+        itemdisparo = movetexto(disp->disparo, disp->x, disp->y, dx, dy);
     }
     disp->disparo = NULL;
     return itemdisparo;
@@ -74,4 +96,14 @@ int tipoatualnodisparo(Disparador d) {
 void imprimedisparador(Disparador d) {
     struct sDisparador *disp = (struct sDisparador *)d;
     printf("Disparador %d em (%lf, %lf)\n", disp->id, disp->x, disp->y);
+}
+
+Pilha getPilhaEsq(Disparador d) {
+    struct sDisparador *disp = (struct sDisparador *)d;
+    return disp->esq;
+}
+
+Pilha getPilhaDir(Disparador d) {
+    struct sDisparador *disp = (struct sDisparador *)d;
+    return disp->dir;
 }

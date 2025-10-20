@@ -52,15 +52,19 @@ void exibirfila(Fila f, FILE *arqnovo){
     sNoItem *atual= (sNoItem *)f;
     while(atual!=NULL){
         if (atual->tipo==0) {
+            printf("\n\nCirculo:\n");
             printCirculo(atual->item, arqnovo);
         }
         else if (atual->tipo==1) {
+            printf("\n\nRetangulo:\n");
             printRetangulo(atual->item, arqnovo);
         }
         else if (atual->tipo==2) {
+            printf("\n\nLinha:\n");
             printLinha(atual->item, arqnovo);
         }
         else if (atual->tipo==3) {
+            printf("\n\nTexto:\n");
             printTexto(atual->item, arqnovo);
         }
         atual=atual->prox;

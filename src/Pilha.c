@@ -3,6 +3,8 @@
 #include "Pilha.h"
 #include "circulo.h"
 #include "retangulo.h"
+#include "linha.h"
+#include "texto.h"
 
 struct elemento{
     Item item;
@@ -42,6 +44,10 @@ Item desempilha(Pilha *p, int *tipo){
 
 void exibir(Pilha p){
     sNoItem *atual= (sNoItem *)p;
+    if(atual==NULL){
+        printf("Pilha vazia!\n");
+        return;
+    }
     while(atual!=NULL){
         if (atual->tipo==0) {
             printCirculo(atual->item, NULL);
@@ -49,10 +55,23 @@ void exibir(Pilha p){
         if (atual->tipo==1) {
             printRetangulo(atual->item, NULL);
         }
-        // Fazer para outros...
+        if (atual->tipo==2) {
+            printLinha(atual->item, NULL);
+        }
+        if (atual->tipo==3) {
+            printTexto(atual->item, NULL);
+        }
         atual=atual->prox;
     }
     printf("\n");
+}
+
+int pilhavazia(Pilha p){
+    sNoItem *topo= (sNoItem *)p;
+    if (topo==NULL) {
+        return 1; // Vazia
+    }
+    return 0; // Nao vazia
 }
 
 Pilha criapilha(){

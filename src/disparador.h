@@ -12,7 +12,7 @@ Disparador criaDisparador(int id, double x, double y);
 void encaixar(Disparador d, Pilha esq, Pilha dir);
 //coloca os carregadores no disparador
 
-void botao(Disparador d, char lado);
+Pilha botao(Disparador d, char lado);
 //aperta o botão de um dos lados
 
 Item disparar(Disparador d, double dx, double dy);
@@ -26,5 +26,11 @@ void imprimedisparador(Disparador d);
 
 int tipoatualnodisparo(Disparador d);
 //mostra o tipo na posição de disparo
+
+Pilha getPilhaEsq(Disparador d);
+//retorna a pilha esquerda do disparador
+
+Pilha getPilhaDir(Disparador d);
+//retorna a pilha direita do disparador
 
 #endif
