@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
 #include "Fila.h"
 #include "circulo.h"
 #include "retangulo.h"
@@ -69,17 +68,6 @@ void exibirfila(Fila f, FILE *arqnovo){
     printf("\n");
 }
 
-Fila criafila(int quantidade,...){
-    if (quantidade==0) return NULL;
-}
-
-void liberarfila(Fila f){
-    /*struct elemento *atual=f->inicio;
-    struct elemento *prox;
-    while(atual!=NULL){
-        prox=atual->prox;
-        free(atual);
-        atual=prox;
-    }
-    free(f);*/
+Fila criafila(){
+    return NULL;
 }

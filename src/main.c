@@ -15,6 +15,10 @@
 #define FILE_NAME_LEN 100
 #define MSG_LEN 1000
 
+char currentFFamily[100] = "sans";
+char currentFWeight[100] = "normal";
+char currentFSize[100] = "12";
+
 void trataPath(char *path, int tamMax, char* arg){
  int argLen = strlen(arg);
  assert(argLen<tamMax);
@@ -90,18 +94,15 @@ int main(int argc, char *argv[]) {
         }
         if (comando[0] == 'c') {
             fscanf(arqgeo, "%d %f %f %f %s %s", &i, &x, &y, &r, corb, corp);
-            //printf("li %d %f %f %f %s %s\n", i, x, y, r, corb, corp);
             Ponto p = criaPonto(x, y);
             Circulo c = criaCirculo(p, r, corb, corp, i);
             adicionar(&fila, c, 0);
-            //printCirculo(c);
         }
         if (comando[0] == 'r') {
             double rx, ry, rw, rh;
             fscanf(arqgeo, "%d %lf %lf %lf %lf %s %s", &i, &rx, &ry, &rw, &rh, corb, corp);
             Retangulo r = criaRetangulo(rx, ry, rw, rh, corb, corp, i);
             adicionar(&fila, r, 1);
-            //printRetangulo(r);
         }
         if (comando[0] == 'l') {
             fscanf(arqgeo, "%d %f %f %f %f %s", &i, &x1, &y1, &x2, &y2, cor);
@@ -110,19 +111,23 @@ int main(int argc, char *argv[]) {
             p2 = criaPonto(x2, y2);
             Linha lin = criaLinha(p1, p2, cor, i);
             adicionar(&fila, lin, 2);
-            //printf("li %d %f %f %f %f %s\n", i, x1, y1, x2, y2, cor);
         }
         if (comando[0] == 't') {
             if (comando[1] == 's') {
                 fscanf(arqgeo, "%s %s %s", fFamily, fWeight, fSize);
-                //printf("li %s %s %s\n", fFamily, fWeight, fSize);
+                if (strcmp(fWeight, "n") == 0) strcpy(fWeight, "normal");
+                else if (strcmp(fWeight, "b") == 0) strcpy(fWeight, "bold");
+                else if (strcmp(fWeight, "b+") == 0) strcpy(fWeight, "bolder");
+                else if (strcmp(fWeight, "l") == 0) strcpy(fWeight, "lighter");
+                strcpy(currentFFamily, fFamily);
+                strcpy(currentFWeight, fWeight);
+                strcpy(currentFSize, fSize);
             }
             else {
                 fscanf(arqgeo, "%d %f %f %s %s %c", &i, &x, &y, corb, corp, &a);
                 fgets(txto, sizeof(txto), arqgeo);
-                //printf("li %d %f %f %s %s %c %s\n", i, x, y, corb, corp, a, txto);
                 Ponto pt = criaPonto(x, y);
-                Texto text = criaTexto(pt, corb, corp, txto, a, i);
+                Texto text = criaTexto(pt, corb, corp, txto, a, currentFFamily, currentFWeight, currentFSize, i);
                 adicionar(&fila, text, 3);
             }
         }
