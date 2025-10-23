@@ -19,10 +19,17 @@ struct sDisparador {
 
 Disparador criaDisparador(int id, double x, double y) {
     struct sDisparador *d = malloc(sizeof(struct sDisparador));
+    if(!d){
+        printf("Erro na alocação do disparador\n");
+        return NULL;
+    }
     d->id = id;
     d->x = x;
     d->y = y;
     d->disparo = NULL;
+    d->tipo = 0;
+    d->esq = NULL;
+    d->dir = NULL;
     return (Disparador)d;
 }
 
@@ -33,50 +40,82 @@ void encaixar(Disparador d, Pilha esq, Pilha dir) {
 }
 
 Pilha botao(Disparador d, char lado) {
-    // Botão esquerdo
+    if (d == NULL) {
+        printf("botao: disparador nulo\n");
+        return NULL;
+    }
     printf("Apertando o botao %c do disparador\n", lado);
-    struct sDisparador *disp = (struct sDisparador *)d;
-    int tipo;
+    imprimedisparador(d);
+    tipoatualnodisparo(d);
+    struct sDisparador *disp = d;
+    printf("Estado antes do tipo: ");
+    int tipo=0;
     printf("Estado antes do botao: ");
     if (lado=='e') {
         printf("BOTAO E no disparador %d; ", disp->id);
-        exibir(disp->dir);
-        Item obj = desempilha(&(disp->dir), &tipo);
-        printf("POP FEITO de um %d ", tipo);
-        if (disp->disparo!=NULL) { // Está vazio inicialmente
-            empilha(disp->esq, disp->disparo, tipo);
+        if(disp->disparo==NULL){
+            printf("Posição de disparo vazio\n");
+            Item obj = desempilha(&(disp->dir), &tipo);
+            if (obj == NULL) {
+                printf("erro ao desempilhar %d\n", disp->id);
+                return NULL;
+            }
+            disp->disparo = obj;
+            disp->tipo = tipo;
+            return disp->dir;
         }
-        disp->disparo = obj;
-        disp->tipo = tipo;
-        return disp->esq;
+        else{
+            empilha(&(disp->esq), disp->disparo, tipo);
+            Item obj = desempilha(&(disp->dir), &tipo);
+            if (obj == NULL) {
+                printf("erro ao desempilhar %d\n", disp->id);
+                return NULL;
+            }
+            disp->disparo = obj;
+            disp->tipo = tipo;
+            return disp->dir;
+        }
     }
     else {
         printf("BOTAO D no disparador %d; ", disp->id);
-        exibir(disp->esq);
-        Item obj = desempilha(&(disp->dir), &tipo);
-        printf("POP FEITO de um %d ", tipo);
-        if (disp->disparo!=NULL) { // Está vazio inicialmente
-            empilha(disp->dir, disp->disparo, tipo);
+        if(disp->disparo==NULL){
+            printf("Posição de disparo vazio\n");
+            Item obj = desempilha(&(disp->esq), &tipo);
+            if (obj == NULL) {
+                printf("erro ao desempilhar %d\n", disp->id);
+                return NULL;
+            }
+            disp->disparo = obj;
+            disp->tipo = tipo;
+            return disp->esq;
         }
-        disp->disparo = obj;
-        disp->tipo = tipo;
-        return disp->dir;
+        else{
+            empilha(&(disp->dir), disp->disparo, tipo);
+            Item obj = desempilha(&(disp->esq), &tipo);
+            if (obj == NULL) {
+                printf("erro ao desempilhar %d\n", disp->id);
+                return NULL;
+            }
+            disp->disparo = obj;
+            disp->tipo = tipo;
+            return disp->esq;
+        }
     }
 }
 
 Item disparar(Disparador d, double dx, double dy) {
     struct sDisparador *disp = (struct sDisparador *)d;
     Item itemdisparo;
-    if (disp->tipo==0) { // Circuulo
+    if (disp->tipo==1) { // Circulo
         itemdisparo = movecirculo(disp->disparo, disp->x, disp->y, dx, dy);
     }
-    else if (disp->tipo==1) {
+    else if (disp->tipo==2) {
         itemdisparo = moveretangulo(disp->disparo, disp->x, disp->y, dx, dy);
     }
-    else if (disp->tipo==2) {
+    else if (disp->tipo==3) {
         itemdisparo = movelinha(disp->disparo, disp->x, disp->y, dx, dy);
     }
-    else if (disp->tipo==3) {
+    else if (disp->tipo==4) {
         itemdisparo = movetexto(disp->disparo, disp->x, disp->y, dx, dy);
     }
     disp->disparo = NULL;
@@ -90,6 +129,7 @@ int iddisparador(Disparador d) {
 
 int tipoatualnodisparo(Disparador d) {
     struct sDisparador *disp = (struct sDisparador *)d;
+    printf("Tipo atual no disparo: %d\n", disp->tipo);
     return disp->tipo;
 }
 

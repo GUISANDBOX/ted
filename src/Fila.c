@@ -51,19 +51,19 @@ Item remover(Fila *f, int *tipo){
 void exibirfila(Fila f, FILE *arqnovo){
     sNoItem *atual= (sNoItem *)f;
     while(atual!=NULL){
-        if (atual->tipo==0) {
+        if (atual->tipo==1) {
             printf("\n\nCirculo:\n");
             printCirculo(atual->item, arqnovo);
         }
-        else if (atual->tipo==1) {
+        else if (atual->tipo==2) {
             printf("\n\nRetangulo:\n");
             printRetangulo(atual->item, arqnovo);
         }
-        else if (atual->tipo==2) {
+        else if (atual->tipo==3) {
             printf("\n\nLinha:\n");
             printLinha(atual->item, arqnovo);
         }
-        else if (atual->tipo==3) {
+        else if (atual->tipo==4) {
             printf("\n\nTexto:\n");
             printTexto(atual->item, arqnovo);
         }

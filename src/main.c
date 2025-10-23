@@ -10,14 +10,12 @@
 #include "linha.h"
 #include "texto.h"
 #include "disparador.h"
+#include "comandosgeo.h" 
+#include "comandosqry.h"
 
 #define PATH_LEN 250
 #define FILE_NAME_LEN 100
 #define MSG_LEN 1000
-
-char currentFFamily[100] = "sans";
-char currentFWeight[100] = "normal";
-char currentFSize[100] = "12";
 
 void trataPath(char *path, int tamMax, char* arg){
  int argLen = strlen(arg);
@@ -31,7 +29,6 @@ void trataPath(char *path, int tamMax, char* arg){
 void trataNomeArquivo(char *path, int tamMax, char* arg){
  sprintf(path,"%s",arg);
 }
-
 
 int main(int argc, char *argv[]) {
     char dir[PATH_LEN], bed[PATH_LEN], arq[FILE_NAME_LEN], arqquery[FILE_NAME_LEN], dirsaidaqry[PATH_LEN], dirsaida[PATH_LEN], dirsaidabase[PATH_LEN];
@@ -82,175 +79,27 @@ int main(int argc, char *argv[]) {
         printf("Erro ao abrir o arquivo GEO  %s\n", dir);
         return 1;
     }
-    fprintf(arqnovo, "<svg xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n");
-    //fclose(arqnovo);
-    do {
-        z = fscanf(arqgeo, " %s", comando);
-        if (z == 1) {
-            //printf("li %s\n", comando);
-        }
-        else {
-            break;
-        }
-        if (comando[0] == 'c') {
-            fscanf(arqgeo, "%d %f %f %f %s %s", &i, &x, &y, &r, corb, corp);
-            Ponto p = criaPonto(x, y);
-            Circulo c = criaCirculo(p, r, corb, corp, i);
-            adicionar(&fila, c, 0);
-        }
-        if (comando[0] == 'r') {
-            double rx, ry, rw, rh;
-            fscanf(arqgeo, "%d %lf %lf %lf %lf %s %s", &i, &rx, &ry, &rw, &rh, corb, corp);
-            Retangulo r = criaRetangulo(rx, ry, rw, rh, corb, corp, i);
-            adicionar(&fila, r, 1);
-        }
-        if (comando[0] == 'l') {
-            fscanf(arqgeo, "%d %f %f %f %f %s", &i, &x1, &y1, &x2, &y2, cor);
-            Ponto p1, p2;
-            p1 = criaPonto(x1, y1);
-            p2 = criaPonto(x2, y2);
-            Linha lin = criaLinha(p1, p2, cor, i);
-            adicionar(&fila, lin, 2);
-        }
-        if (comando[0] == 't') {
-            if (comando[1] == 's') {
-                fscanf(arqgeo, "%s %s %s", fFamily, fWeight, fSize);
-                if (strcmp(fWeight, "n") == 0) strcpy(fWeight, "normal");
-                else if (strcmp(fWeight, "b") == 0) strcpy(fWeight, "bold");
-                else if (strcmp(fWeight, "b+") == 0) strcpy(fWeight, "bolder");
-                else if (strcmp(fWeight, "l") == 0) strcpy(fWeight, "lighter");
-                strcpy(currentFFamily, fFamily);
-                strcpy(currentFWeight, fWeight);
-                strcpy(currentFSize, fSize);
-            }
-            else {
-                fscanf(arqgeo, "%d %f %f %s %s %c", &i, &x, &y, corb, corp, &a);
-                fgets(txto, sizeof(txto), arqgeo);
-                Ponto pt = criaPonto(x, y);
-                Texto text = criaTexto(pt, corb, corp, txto, a, currentFFamily, currentFWeight, currentFSize, i);
-                adicionar(&fila, text, 3);
-            }
-        }
-    } while (z == 1);
-    //arqnovo = fopen(arqnovo, "a+");
+    
+    fila=processaGeo(arqgeo, fila, arqnovo);
 
-    //remover(&fila);
-    exibirfila(fila, arqnovo);
-
-    fprintf(arqnovo, "</svg>\n");
     fclose(arqgeo);
     fclose(arqnovo);
-	printf("Arquivo SVG criado!\n");
+    printf("Arquivo SVG criado!\n");
 
-    // Leitura do query
-    
     strcat(bed,"/");strcat(bed,arqquery);
     strcat(dirsaidabase, "/arqquery.svg");
     FILE *fileq = fopen(bed, "r");
     if (!fileq) {
-        printf("OCORREU UM ERRO AO LER O QUERY");
-    }
-    else {
-        printf("QUERY LIDO!");
+        printf("OCORREU UM ERRO AO LER O QUERY\n");
+        return 1;
     }
     FILE *filesaidaquery = fopen(dirsaidabase, "w+");
-
-	Disparador listadisp[100];
-    Pilha listacarr[100];
-    int tipo, j, n;
-    int iesq, idir;
-    for (j=0; j<100; j++) {
-        listacarr[j] = criapilha(0);
-    }
-
     Fila filasaida = criafila(0);
+    processaQry(fileq, filasaida, filesaidaquery, fila);
 
-    do {
-        z = fscanf(fileq, " %s", comando);
-        if (z == 1) {
-            printf("LIDO %s\n", comando);
-        }
-        else {
-            break;
-        }
-        if (!strcmp(comando, "pd")) {
-            fscanf(fileq, "%d %f %f", &i, &x, &y);
-            Disparador disp;
-            disp = criaDisparador(i, x, y); 
-            listadisp[i] = disp;
-            printf("Disparador %d criado!\n", iddisparador(listadisp[i]));
-        }
-        else if (!strcmp(comando, "lc")) {
-            
-            fscanf(fileq, "%d %d", &i, &n);
-            printf("Inicializando carregador!\n");
-            Pilha pilha = criapilha(0);
-            Item item;
-            for (j=0; j<n; j++) {
-                item = remover(&fila, &tipo);
-                empilha(&pilha, item, tipo);
-            }
-            printf("Pilha %d carregada!\n", i);
-            listacarr[i] = pilha;
-            //exibir(listacarr[i]);
-        }
-        else if (!strcmp(comando, "atch")) {
-            fscanf(fileq, "%d %d %d", &i, &iesq, &idir);
-            printf("Encaixando disparadores!\n");
-            Disparador disp = listadisp[i];
-            Pilha pilhaesq = listacarr[iesq];
-            Pilha pilhadir = listacarr[idir];
-            encaixar(disp, pilhaesq, pilhadir);
-            printf("Encaixe realizado!\n");
-        }
-        else if (!strcmp(comando, "rjd")) {
-            fscanf(fileq, "%i %c %f %f %f %f", &i, &a, &x1, &y1, &x2, &y2);
-            printf("REALIZANDO RAJADA\n");
-            Pilha pilhadodisparador;
-            if(a=='d'){
-                printf("entrou no if da rajada\n");
-                pilhadodisparador = getPilhaEsq(listadisp[i]);
-                exibir(pilhadodisparador);
-            }
-            else{
-                printf("entrou no else da rajada\n");
-                pilhadodisparador = getPilhaDir(listadisp[i]);
-                exibir(pilhadodisparador);
-            }
-            while(pilhavazia(pilhadodisparador)==0){
-                printf("entrou no while da rajada\n");
-                pilhadodisparador = botao(listadisp[i], a);
-                printf("Disparando um objeto: %d\n", tipoatualnodisparo(listadisp[i]));
-                adicionar(&filasaida, disparar(listadisp[i], x1, y1), tipoatualnodisparo(listadisp[i]));
-                x1+=x2;
-                y1+=y2;
-            }
-        }
-        else if (!strcmp(comando, "shft")) {
-            fscanf(fileq, "%i %c %i", &i, &a, &n);
-            printf("REALIZANDO SHIFT\n");
-            for (int j=0; j<n; j++) {
-                botao(listadisp[i], a);
-            }
-            printf("SHIFT REALIZADO PARA %c\n", a);
-        }
-        else if (!strcmp(comando, "dsp")) {
-            double nx, ny;
-            fscanf(fileq, "%i %lf %lf", &i, &nx, &ny);
-            Disparador disp = listadisp[i];
-            printf("Disparando um objeto: %d\n", tipoatualnodisparo(disp));
-            adicionar(&filasaida, disparar(disp, nx, ny), tipoatualnodisparo(disp));
-        }
-        
-    } while (z == 1);
-
-
-    fprintf(filesaidaquery, "<svg xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n");
-    exibirfila(filasaida, filesaidaquery);
-    fprintf(filesaidaquery, "</svg>\n");
+    fclose(fileq);
     fclose(filesaidaquery);
-	printf("Sucesso!\n");
-
+    printf("Sucesso!\n");
 
     return 0;
 }

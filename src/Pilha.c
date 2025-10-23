@@ -8,7 +8,7 @@
 
 struct elemento{
     Item item;
-    int tipo; // 0 - circulo, 1 retangulo, 2 - linha, 3 - texto
+    int tipo; // 1 - circulo, 2 - retangulo, 3 - linha, 4 - texto
     struct elemento *prox;
 };
 
@@ -49,16 +49,16 @@ void exibir(Pilha p){
         return;
     }
     while(atual!=NULL){
-        if (atual->tipo==0) {
+        if (atual->tipo==1) {
             printCirculo(atual->item, NULL);
         }
-        if (atual->tipo==1) {
+        if (atual->tipo==2) {
             printRetangulo(atual->item, NULL);
         }
-        if (atual->tipo==2) {
+        if (atual->tipo==3) {
             printLinha(atual->item, NULL);
         }
-        if (atual->tipo==3) {
+        if (atual->tipo==4) {
             printTexto(atual->item, NULL);
         }
         atual=atual->prox;
