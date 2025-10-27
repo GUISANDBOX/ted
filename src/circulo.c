@@ -47,3 +47,21 @@ double areaCirculo(Circulo c) {
     struct sCirculo *circ = c;
     return 3.14159265358979323846 * circ->raio * circ->raio;
 }
+
+double getXCirculo(Circulo c) {
+    struct sCirculo *circ = c;
+    return getX(circ->centro);
+}
+//retorna a coordenada x do círculo
+
+double getYCirculo(Circulo c) {
+    struct sCirculo *circ = c;
+    return getY(circ->centro);
+}
+//retorna a coordenada y do círculo
+
+double getRCirculo(Circulo c) {
+    struct sCirculo *circ = c;
+    return circ->raio;
+}
+//retorna o raio do círculo

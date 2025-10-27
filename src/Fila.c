@@ -27,24 +27,33 @@ void adicionar(Fila *f,  Item item, int tipo){
     *inicio = novo;
 }
 
-Item remover(Fila *f, int *tipo){
+Item remover(Fila *f, int *tipo) {
     sNoItem **inicio = (sNoItem **)f;
-    if (*inicio==NULL) { // Evita remover de fila vazia
+
+    if (*inicio == NULL) { // Evita remover de fila vazia
         printf("Fila vazia!\n");
         return NULL;
     }
 
-    sNoItem *old = *inicio;
-    sNoItem *antes = *inicio;
-    old = old->prox;
-    while (old->prox != NULL) {
-        antes = antes->prox;
-        old = old->prox;
+    sNoItem *atual = *inicio;
+    sNoItem *anterior = NULL;
+
+    // Percorre até o último nó
+    while (atual->prox != NULL) {
+        anterior = atual;
+        atual = atual->prox;
     }
-    Item removido = old->item;
-    antes->prox = NULL; // Atualiza o novo fim
-    *tipo = old->tipo;
-    //free(old); // Desaloca da mem�ria o item removido
+
+    // Se só havia um elemento
+    if (anterior == NULL) {
+        *inicio = NULL; // fila agora fica vazia
+    } else {
+        anterior->prox = NULL; // o penúltimo vira o último
+    }
+
+    Item removido = atual->item;
+    *tipo = atual->tipo;
+    free(atual); // desaloca o nó removido
     return removido;
 }
 
@@ -74,4 +83,12 @@ void exibirfila(Fila f, FILE *arqnovo){
 
 Fila criafila(){
     return NULL;
+}
+
+int filavazia(Fila f) {
+    sNoItem *atual= (sNoItem *)f;
+    if(atual==NULL){
+        return 1;
+    }
+    return 0;
 }

@@ -18,4 +18,42 @@ Retangulo moveretangulo(Retangulo r, double xdisp, double ydisp, double dx, doub
 double areaRetangulo(Retangulo r);
 //calcula a área do retângulo
 
+double areaRetangulo(Retangulo r);
+//calcula a área do retângulo
+
+
+double getXRetangulo(Retangulo r);
+//retorna a coordenada x do retângulo  
+
+
+double getYRetangulo(Retangulo r);
+//retorna a coordenada y do retângulo
+
+
+double getWRetangulo(Retangulo r);
+//retorna a largura do retângulo
+
+
+double getHRetangulo(Retangulo r);
+//retorna a altura do retângulo
+
+int getIdRetangulo(Retangulo r);
+//retorna o id do retângulo
+
+char* getCorbRetangulo(Retangulo r);
+//retorna a cor de borda do retângulo
+
+char* getCorpRetangulo(Retangulo r);
+//retorna a cor de preenchimento do retângulo
+
+void setCorbRetangulo(Retangulo r, char corb[100]);
+//altera a cor de borda do retângulo
+
+void setCorpRetangulo(Retangulo r, char corp[100]);
+//altera a cor de preenchimento do retângulo
+
+Retangulo cloneretangulo(Retangulo r, int inverte);
+//clona o retângulo
+
+
 #endif

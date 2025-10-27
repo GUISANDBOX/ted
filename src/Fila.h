@@ -17,4 +17,7 @@ Item remover(Fila *f, int *tipo);
 void exibirfila(Fila f, FILE *arqnovo);
 //exibe os elementos da fila.
 
+int filavazia(Fila f);
+//verifica se a fila está vazia
+
 #endif
