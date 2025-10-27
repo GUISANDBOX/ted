@@ -39,6 +39,11 @@ void printRetangulo(Retangulo r, FILE *arq) {
     printf("Ancora: %lf %lf\n", ret->x, ret->y);
     printf("Largura/altura: %lf %lf\n", ret->w, ret->h);
     printf("Cores borda/preenchimento: %s/%s \n", ret->corb, ret->corp);
-
+    printf("Área: %.2f \n", areaRetangulo(r));
     if (arq!=NULL) criaretangulo(ret->id, ret->x, ret->y, ret->w, ret->h, ret->corb, ret->corp, arq);
+}
+
+double areaRetangulo(Retangulo r) {
+    struct sRetangulo *ret = r;
+    return ret->w * ret->h;
 }

@@ -39,6 +39,11 @@ void printCirculo(Circulo c, FILE *arq) {
     printf("Centro: (%f, %f)\n", getX(circ->centro), getY(circ->centro));
     printf("Raio: %.1f \n", circ->raio);
     printf("Cores borda/preenchimento: %s/%s \n", circ->corb, circ->corp);
+    printf("Área: %.2f \n", areaCirculo(c));
     if (arq!=NULL) criacirculo(circ->id, getX(circ->centro), getY(circ->centro), circ->raio, circ->corb, circ->corp, arq);
 }
 
+double areaCirculo(Circulo c) {
+    struct sCirculo *circ = c;
+    return 3.14159265358979323846 * circ->raio * circ->raio;
+}

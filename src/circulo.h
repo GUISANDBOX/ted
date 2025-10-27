@@ -16,4 +16,7 @@ void printCirculo(Circulo c, FILE *arq);
 Circulo movecirculo(Circulo r, double xdisp, double ydisp, double dx, double dy);
 //move o circulo para uma nova posição
 
+double areaCirculo(Circulo c);
+//calcula a área do círculo
+
 #endif

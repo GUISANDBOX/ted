@@ -15,4 +15,7 @@ void printRetangulo(Retangulo r, FILE *arq);
 Retangulo moveretangulo(Retangulo r, double xdisp, double ydisp, double dx, double dy);
 //move o retângulo para uma nova posição
 
+double areaRetangulo(Retangulo r);
+//calcula a área do retângulo
+
 #endif
