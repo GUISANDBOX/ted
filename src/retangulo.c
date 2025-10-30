@@ -75,7 +75,6 @@ double getHRetangulo(Retangulo r) {
 }
 //retorna a altura do retângulo
 
-
 int getIdRetangulo(Retangulo r) {
     struct sRetangulo *ret = r;
     return ret->id;
@@ -110,4 +109,14 @@ Retangulo cloneretangulo(Retangulo r, int inverte) {
     struct sRetangulo *ret = r;
     return (inverte==1) ? criaRetangulo(ret->x, ret->y, ret->w, ret->h, ret->corp, ret->corb, ret->id) : 
                           criaRetangulo(ret->x, ret->y, ret->w, ret->h, ret->corb, ret->corp, ret->id);
+}
+
+void escreveRetanguloTxt(Retangulo r, FILE *arq) {
+    struct sRetangulo *ret = r;
+    fprintf(arq, "\nretangulo  %d\n", ret->id);
+    fprintf(arq, "ancora: (%.2lf, %.2lf)\n", ret->x, ret->y);
+    fprintf(arq, "largura: %.2lf\natura: %.2lf\n", ret->w, ret->h);
+    fprintf(arq, "borda: %s\n", ret->corb);
+    fprintf(arq, "preenchimento: %s\n", ret->corp);
+    fprintf(arq, "area: %.2f\n", areaRetangulo(r));
 }

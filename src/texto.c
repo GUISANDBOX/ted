@@ -17,7 +17,7 @@ struct sTexto {
     char currentFSize[10];
 };
 
-Texto criaTexto(Ponto ponto, char corb[100], char corp[100], char txto[100], char a, char currentFFamily[10], char currentFWeight[10], char currentFSize[10], int id) {
+Texto criaTexto(Ponto ponto, char corb[], char corp[], char txto[], char a, char currentFFamily[], char currentFWeight[], char currentFSize[], int id) {
     struct sTexto *t = malloc(sizeof(struct sTexto));
     if (!t) return NULL; // segurança
     t->ponto = ponto;

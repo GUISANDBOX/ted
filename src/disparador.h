@@ -33,4 +33,7 @@ Pilha getPilhaEsq(Disparador d);
 Pilha getPilhaDir(Disparador d);
 //retorna a pilha direita do disparador
 
+Item itemAtualNoDisparo(Disparador d);
+//retorna o item atual na posição de disparo
+
 #endif

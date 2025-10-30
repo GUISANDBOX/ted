@@ -147,3 +147,8 @@ Pilha getPilhaDir(Disparador d) {
     struct sDisparador *disp = (struct sDisparador *)d;
     return disp->dir;
 }
+
+Item itemAtualNoDisparo(Disparador d) {
+    struct sDisparador *disp = (struct sDisparador *)d;
+    return disp->disparo;
+}

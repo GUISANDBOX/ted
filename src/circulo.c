@@ -65,3 +65,51 @@ double getRCirculo(Circulo c) {
     return circ->raio;
 }
 //retorna o raio do círculo
+
+void setCorbCirculo(Circulo c, char corb[100]) {
+    struct sCirculo *circ = c;
+    strcpy(circ->corb, corb);
+}
+//altera a cor da borda do círculo
+
+Circulo clonecirculo(Circulo c, int novo_id) {
+    struct sCirculo *circ = c;
+    Ponto centro_clone = criaPonto(getX(circ->centro), getY(circ->centro));
+    Circulo novo = criaCirculo(centro_clone, circ->raio, circ->corb, circ->corp, novo_id);
+    return novo;
+}
+
+int getIdCirculo(Circulo c) {
+    struct sCirculo *circ = c;
+    return circ->id;
+}
+//retorna o id do círculo
+
+char* getCorbCirculo(Circulo c) {
+    struct sCirculo *circ = c;
+    return circ->corb;
+}
+//retorna a cor de borda do círculo
+
+char* getCorpCirculo(Circulo c) {
+    struct sCirculo *circ = c;
+    return circ->corp;
+}
+//retorna a cor de preenchimento do círculo
+
+
+void setCorpCirculo(Circulo c, char corp[100]) {
+    struct sCirculo *circ = c;
+    strcpy(circ->corp, corp);
+}
+//altera a cor de preenchimento do círculo
+
+void escreveCirculoTxt(Circulo c, FILE *arq) {
+    struct sCirculo *circ = c;
+    fprintf(arq, "\ncirculo %i\n", circ->id);
+    fprintf(arq, "ancora em (%f, %f)\n", getX(circ->centro), getY(circ->centro));
+    fprintf(arq, "raio: %.1f \n", circ->raio);
+    fprintf(arq, "borda: %s \n", circ->corb);
+    fprintf(arq, "preenchimento: %s \n", circ->corp);
+    fprintf(arq, "area: %.2f \n", areaCirculo(c));
+}

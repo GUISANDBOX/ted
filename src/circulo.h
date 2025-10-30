@@ -28,4 +28,22 @@ double getYCirculo(Circulo c);
 double getRCirculo(Circulo c);
 //retorna o raio do círculo
 
+void setCorbCirculo(Circulo c, char corb[100]);
+//altera a cor da borda do círculo
+
+Circulo clonecirculo(Circulo c, int novo_id);
+
+int getIdCirculo(Circulo c); 
+
+char* getCorbCirculo(Circulo c);
+//retorna a cor de borda do círculo
+
+char* getCorpCirculo(Circulo c);
+//retorna a cor de preenchimento do círculo
+
+void setCorpCirculo(Circulo c, char corp[100]);
+//altera a cor de preenchimento do círculo
+
+void escreveCirculoTxt(Circulo c, FILE *arq);
+
 #endif

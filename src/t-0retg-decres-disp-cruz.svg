@@ -1,15 +1,22 @@
 <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
 <rect x="124.000000" y="151.000000" width="67.200000" height="53.400000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
+<text x="138.000000" y="162.000000" stroke="red" fill="red" fill-opacity="0.5" text-anchor="middle" font-family="Arial" font-weight="normal" font-size="12" >*</text>
 <rect x="152.000000" y="173.000000" width="61.600000" height="50.200000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
+<text x="166.000000" y="184.000000" stroke="red" fill="red" fill-opacity="0.5" text-anchor="middle" font-family="Arial" font-weight="normal" font-size="12" >*</text>
 <rect x="180.000000" y="195.000000" width="56.000000" height="47.000000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
 <rect x="124.000000" y="349.000000" width="53.200000" height="45.400000" fill-opacity="0.5" stroke="#800000" fill="#c8ab37" />
 <rect x="138.000000" y="338.000000" width="50.400000" height="43.800000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
+<text x="152.000000" y="327.000000" stroke="red" fill="red" fill-opacity="0.5" text-anchor="middle" font-family="Arial" font-weight="normal" font-size="12" >*</text>
 <rect x="166.000000" y="316.000000" width="44.800000" height="40.600000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
+<text x="180.000000" y="305.000000" stroke="red" fill="red" fill-opacity="0.5" text-anchor="middle" font-family="Arial" font-weight="normal" font-size="12" >*</text>
 <rect x="376.000000" y="151.000000" width="39.200000" height="37.400000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
+<text x="362.000000" y="162.000000" stroke="red" fill="red" fill-opacity="0.5" text-anchor="middle" font-family="Arial" font-weight="normal" font-size="12" >*</text>
 <rect x="348.000000" y="173.000000" width="33.600000" height="34.200000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
+<text x="334.000000" y="184.000000" stroke="red" fill="red" fill-opacity="0.5" text-anchor="middle" font-family="Arial" font-weight="normal" font-size="12" >*</text>
 <rect x="320.000000" y="195.000000" width="28.000000" height="31.000000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
 <rect x="376.000000" y="349.000000" width="25.200000" height="29.400000" fill-opacity="0.5" stroke="#800000" fill="#c8ab37" />
 <rect x="362.000000" y="338.000000" width="22.400000" height="27.800000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
+<text x="348.000000" y="327.000000" stroke="red" fill="red" fill-opacity="0.5" text-anchor="middle" font-family="Arial" font-weight="normal" font-size="12" >*</text>
 <rect x="334.000000" y="316.000000" width="16.800000" height="24.600000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />
 <rect x="320.000000" y="305.000000" width="14.000000" height="23.000000" fill-opacity="0.5" stroke="#800000" fill="#c8ab37" />
 <rect x="20.515394" y="416.914652" width="14.000000" height="15.000000" fill-opacity="0.5" stroke="#c87137" fill="#ffcc00" />

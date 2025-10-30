@@ -55,5 +55,7 @@ void setCorpRetangulo(Retangulo r, char corp[100]);
 Retangulo cloneretangulo(Retangulo r, int inverte);
 //clona o retângulo
 
+void escreveRetanguloTxt(Retangulo r, FILE *arq);
+//escreve o retângulo em um arquivo txt
 
 #endif
