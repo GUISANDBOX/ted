@@ -1,5 +1,4 @@
 [*] lc 3 20
-
 retangulo  5
 ancora: (289.46, 146.02)
 largura: 67.20
@@ -159,8 +158,8 @@ atura: 23.00
 borda: #800000
 preenchimento: #c8ab37
 area: 322.00
-[*] shft 5 d 1
 
+[*] shft 5 d 1
 retangulo  24
 ancora: (277.09, 101.77)
 largura: 14.00
@@ -168,8 +167,18 @@ atura: 23.00
 borda: #800000
 preenchimento: #c8ab37
 area: 322.00
-[*] shft 5 d 1
 
+[*] dsp 5 70.00 55.00 i
+retangulo  24
+ancora: (277.09, 101.77)
+largura: 14.00
+atura: 23.00
+borda: #800000
+preenchimento: #c8ab37
+area: 322.00
+
+Posicao apos disparo: (320.00, 305.00)
+[*] shft 5 d 1
 retangulo  23
 ancora: (486.67, 190.89)
 largura: 16.80
@@ -177,8 +186,18 @@ atura: 24.60
 borda: #c87137
 preenchimento: #ffcc00
 area: 413.28
-[*] shft 5 d 1
 
+[*] dsp 5 84.00 66.00 i
+retangulo  23
+ancora: (486.67, 190.89)
+largura: 16.80
+atura: 24.60
+borda: #c87137
+preenchimento: #ffcc00
+area: 413.28
+
+Posicao apos disparo: (334.00, 316.00)
+[*] shft 5 d 1
 retangulo  22
 ancora: (312.81, 440.04)
 largura: 19.60
@@ -186,8 +205,18 @@ atura: 26.20
 borda: #800000
 preenchimento: #c8ab37
 area: 513.52
-[*] shft 5 d 1
 
+[*] dsp 5 98.00 77.00 i
+retangulo  22
+ancora: (312.81, 440.04)
+largura: 19.60
+atura: 26.20
+borda: #800000
+preenchimento: #c8ab37
+area: 513.52
+
+Posicao apos disparo: (348.00, 327.00)
+[*] shft 5 d 1
 retangulo  21
 ancora: (85.72, 320.71)
 largura: 22.40
@@ -195,8 +224,18 @@ atura: 27.80
 borda: #c87137
 preenchimento: #ffcc00
 area: 622.72
-[*] shft 5 d 1
 
+[*] dsp 5 112.00 88.00 i
+retangulo  21
+ancora: (85.72, 320.71)
+largura: 22.40
+atura: 27.80
+borda: #c87137
+preenchimento: #ffcc00
+area: 622.72
+
+Posicao apos disparo: (362.00, 338.00)
+[*] shft 5 d 1
 retangulo  20
 ancora: (221.30, 153.94)
 largura: 25.20
@@ -204,8 +243,18 @@ atura: 29.40
 borda: #800000
 preenchimento: #c8ab37
 area: 740.88
-[*] shft 5 d 1
 
+[*] dsp 5 126.00 99.00 i
+retangulo  20
+ancora: (221.30, 153.94)
+largura: 25.20
+atura: 29.40
+borda: #800000
+preenchimento: #c8ab37
+area: 740.88
+
+Posicao apos disparo: (376.00, 349.00)
+[*] shft 5 d 1
 retangulo  19
 ancora: (240.16, 225.73)
 largura: 28.00
@@ -213,8 +262,18 @@ atura: 31.00
 borda: #c87137
 preenchimento: #ffcc00
 area: 868.00
-[*] shft 5 d 1
 
+[*] dsp 5 70.00 -55.00 i
+retangulo  19
+ancora: (240.16, 225.73)
+largura: 28.00
+atura: 31.00
+borda: #c87137
+preenchimento: #ffcc00
+area: 868.00
+
+Posicao apos disparo: (320.00, 195.00)
+[*] shft 5 d 1
 retangulo  18
 ancora: (97.42, 138.38)
 largura: 30.80
@@ -222,8 +281,18 @@ atura: 32.60
 borda: #800000
 preenchimento: #c8ab37
 area: 1004.08
-[*] shft 5 d 1
 
+[*] dsp 5 84.00 -66.00 i
+retangulo  18
+ancora: (97.42, 138.38)
+largura: 30.80
+atura: 32.60
+borda: #800000
+preenchimento: #c8ab37
+area: 1004.08
+
+Posicao apos disparo: (334.00, 184.00)
+[*] shft 5 d 1
 retangulo  17
 ancora: (339.86, 418.11)
 largura: 33.60
@@ -231,8 +300,18 @@ atura: 34.20
 borda: #c87137
 preenchimento: #ffcc00
 area: 1149.12
-[*] shft 5 d 1
 
+[*] dsp 5 98.00 -77.00 i
+retangulo  17
+ancora: (339.86, 418.11)
+largura: 33.60
+atura: 34.20
+borda: #c87137
+preenchimento: #ffcc00
+area: 1149.12
+
+Posicao apos disparo: (348.00, 173.00)
+[*] shft 5 d 1
 retangulo  16
 ancora: (35.15, 30.86)
 largura: 36.40
@@ -240,8 +319,18 @@ atura: 35.80
 borda: #800000
 preenchimento: #c8ab37
 area: 1303.12
-[*] shft 5 d 1
 
+[*] dsp 5 112.00 -88.00 i
+retangulo  16
+ancora: (35.15, 30.86)
+largura: 36.40
+atura: 35.80
+borda: #800000
+preenchimento: #c8ab37
+area: 1303.12
+
+Posicao apos disparo: (362.00, 162.00)
+[*] shft 5 d 1
 retangulo  15
 ancora: (408.30, 424.59)
 largura: 39.20
@@ -249,8 +338,18 @@ atura: 37.40
 borda: #c87137
 preenchimento: #ffcc00
 area: 1466.08
-[*] shft 5 d 1
 
+[*] dsp 5 126.00 -99.00 i
+retangulo  15
+ancora: (408.30, 424.59)
+largura: 39.20
+atura: 37.40
+borda: #c87137
+preenchimento: #ffcc00
+area: 1466.08
+
+Posicao apos disparo: (376.00, 151.00)
+[*] shft 5 d 1
 retangulo  14
 ancora: (70.24, 28.83)
 largura: 42.00
@@ -258,8 +357,18 @@ atura: 39.00
 borda: #800000
 preenchimento: #c8ab37
 area: 1638.00
-[*] shft 5 d 1
 
+[*] dsp 5 -70.00 55.00 i
+retangulo  14
+ancora: (70.24, 28.83)
+largura: 42.00
+atura: 39.00
+borda: #800000
+preenchimento: #c8ab37
+area: 1638.00
+
+Posicao apos disparo: (180.00, 305.00)
+[*] shft 5 d 1
 retangulo  13
 ancora: (436.34, 447.81)
 largura: 44.80
@@ -267,8 +376,18 @@ atura: 40.60
 borda: #c87137
 preenchimento: #ffcc00
 area: 1818.88
-[*] shft 5 d 1
 
+[*] dsp 5 -84.00 66.00 i
+retangulo  13
+ancora: (436.34, 447.81)
+largura: 44.80
+atura: 40.60
+borda: #c87137
+preenchimento: #ffcc00
+area: 1818.88
+
+Posicao apos disparo: (166.00, 316.00)
+[*] shft 5 d 1
 retangulo  12
 ancora: (190.30, 83.45)
 largura: 47.60
@@ -276,8 +395,18 @@ atura: 42.20
 borda: #800000
 preenchimento: #c8ab37
 area: 2008.72
-[*] shft 5 d 1
 
+[*] dsp 5 -98.00 77.00 i
+retangulo  12
+ancora: (190.30, 83.45)
+largura: 47.60
+atura: 42.20
+borda: #800000
+preenchimento: #c8ab37
+area: 2008.72
+
+Posicao apos disparo: (152.00, 327.00)
+[*] shft 5 d 1
 retangulo  11
 ancora: (50.07, 97.63)
 largura: 50.40
@@ -285,8 +414,18 @@ atura: 43.80
 borda: #c87137
 preenchimento: #ffcc00
 area: 2207.52
-[*] shft 5 d 1
 
+[*] dsp 5 -112.00 88.00 i
+retangulo  11
+ancora: (50.07, 97.63)
+largura: 50.40
+atura: 43.80
+borda: #c87137
+preenchimento: #ffcc00
+area: 2207.52
+
+Posicao apos disparo: (138.00, 338.00)
+[*] shft 5 d 1
 retangulo  10
 ancora: (470.26, 270.03)
 largura: 53.20
@@ -294,8 +433,18 @@ atura: 45.40
 borda: #800000
 preenchimento: #c8ab37
 area: 2415.28
-[*] shft 5 d 1
 
+[*] dsp 5 -126.00 99.00 i
+retangulo  10
+ancora: (470.26, 270.03)
+largura: 53.20
+atura: 45.40
+borda: #800000
+preenchimento: #c8ab37
+area: 2415.28
+
+Posicao apos disparo: (124.00, 349.00)
+[*] shft 5 d 1
 retangulo  9
 ancora: (272.08, 184.08)
 largura: 56.00
@@ -303,8 +452,18 @@ atura: 47.00
 borda: #c87137
 preenchimento: #ffcc00
 area: 2632.00
-[*] shft 5 d 1
 
+[*] dsp 5 -70.00 -55.00 i
+retangulo  9
+ancora: (272.08, 184.08)
+largura: 56.00
+atura: 47.00
+borda: #c87137
+preenchimento: #ffcc00
+area: 2632.00
+
+Posicao apos disparo: (180.00, 195.00)
+[*] shft 5 d 1
 retangulo  8
 ancora: (173.26, 269.38)
 largura: 58.80
@@ -312,8 +471,18 @@ atura: 48.60
 borda: #800000
 preenchimento: #c8ab37
 area: 2857.68
-[*] shft 5 d 1
 
+[*] dsp 5 -84.00 -66.00 i
+retangulo  8
+ancora: (173.26, 269.38)
+largura: 58.80
+atura: 48.60
+borda: #800000
+preenchimento: #c8ab37
+area: 2857.68
+
+Posicao apos disparo: (166.00, 184.00)
+[*] shft 5 d 1
 retangulo  7
 ancora: (171.85, 121.42)
 largura: 61.60
@@ -321,8 +490,18 @@ atura: 50.20
 borda: #c87137
 preenchimento: #ffcc00
 area: 3092.32
-[*] shft 5 d 1
 
+[*] dsp 5 -98.00 -77.00 i
+retangulo  7
+ancora: (171.85, 121.42)
+largura: 61.60
+atura: 50.20
+borda: #c87137
+preenchimento: #ffcc00
+area: 3092.32
+
+Posicao apos disparo: (152.00, 173.00)
+[*] shft 5 d 1
 retangulo  6
 ancora: (471.61, 214.60)
 largura: 64.40
@@ -330,8 +509,18 @@ atura: 51.80
 borda: #800000
 preenchimento: #c8ab37
 area: 3335.92
-[*] shft 5 d 1
 
+[*] dsp 5 -112.00 -88.00 i
+retangulo  6
+ancora: (471.61, 214.60)
+largura: 64.40
+atura: 51.80
+borda: #800000
+preenchimento: #c8ab37
+area: 3335.92
+Posicao apos disparo: (138.00, 162.00)
+
+[*] shft 5 d 1
 retangulo  5
 ancora: (289.46, 146.02)
 largura: 67.20
@@ -339,3 +528,14 @@ atura: 53.40
 borda: #c87137
 preenchimento: #ffcc00
 area: 3588.48
+
+[*] dsp 5 -126.00 -99.00 i
+retangulo  5
+ancora: (289.46, 146.02)
+largura: 67.20
+atura: 53.40
+borda: #c87137
+preenchimento: #ffcc00
+area: 3588.48
+
+Posicao apos disparo: (124.00, 151.00)

@@ -23,4 +23,22 @@ int circuloRetanguloSobrepoem(Circulo c, Retangulo r);
 
 Fila executaCalc(Fila filasaida, Fila filaOriginal, FILE *filesaidaquery);
 
+int linhasSobrepoem(Item l1, Item l2, int tipo1, int tipo2);
+
+
+int linhaOuTexto(int tipo);
+
+Ponto getP1Item(Item item, int tipo);
+
+
+Ponto getP2Item(Item item, int tipo);
+
+double areaLinha(Item item, int tipo);
+
+char *getCorbLinha(Item item, int tipo);
+
+
+char *getCorpLinha(Item item, int tipo);
+
+
 #endif

@@ -9,6 +9,7 @@
         "string.h": "c",
         "math.h": "c",
         "comandosqry.h": "c",
-        "linha.h": "c"
+        "linha.h": "c",
+        "ponto.h": "c"
     }
 }

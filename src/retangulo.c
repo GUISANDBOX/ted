@@ -113,10 +113,11 @@ Retangulo cloneretangulo(Retangulo r, int inverte) {
 
 void escreveRetanguloTxt(Retangulo r, FILE *arq) {
     struct sRetangulo *ret = r;
-    fprintf(arq, "\nretangulo  %d\n", ret->id);
+    fprintf(arq, "retangulo  %d\n", ret->id);
     fprintf(arq, "ancora: (%.2lf, %.2lf)\n", ret->x, ret->y);
     fprintf(arq, "largura: %.2lf\natura: %.2lf\n", ret->w, ret->h);
     fprintf(arq, "borda: %s\n", ret->corb);
     fprintf(arq, "preenchimento: %s\n", ret->corp);
     fprintf(arq, "area: %.2f\n", areaRetangulo(r));
+    fprintf(arq, "\n");
 }

@@ -36,4 +36,10 @@ Pilha getPilhaDir(Disparador d);
 Item itemAtualNoDisparo(Disparador d);
 //retorna o item atual na posição de disparo
 
+double getXDisparador(Disparador d);
+//retorna a coordenada x do disparador
+
+double getYDisparador(Disparador d);
+//retorna a coordenada y do disparador
+
 #endif

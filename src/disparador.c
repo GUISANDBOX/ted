@@ -152,3 +152,14 @@ Item itemAtualNoDisparo(Disparador d) {
     struct sDisparador *disp = (struct sDisparador *)d;
     return disp->disparo;
 }
+
+double getXDisparador(Disparador d) {
+    struct sDisparador *disp = (struct sDisparador *)d;
+    return disp->x;
+}
+//retorna a coordenada x do disparador
+
+double getYDisparador(Disparador d) {
+    struct sDisparador *disp = (struct sDisparador *)d;
+    return disp->y;
+}

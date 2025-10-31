@@ -5,6 +5,7 @@
 #include "circulo.h"
 #include "linha.h"
 #include "texto.h"
+#include "ponto.h"
 #include <math.h>
 #include "disparador.h"
 
@@ -17,11 +18,73 @@ void escreveItemTxt(Item item, int tipo, FILE *arqtxt) {
         escreveRetanguloTxt(r, arqtxt);
     } else if (tipo == 3) { // Linha
         Linha l = (Linha)item;
-        
+        escreveLinhaTxt(l, arqtxt);
     } else if (tipo == 4) { // Texto
         Texto t = (Texto)item;
-        
+        escreveTextoTxt(t, arqtxt);
     }
+}
+
+Ponto getP1Item(Item item, int tipo) {
+    if (tipo == 3) { // Linha
+        Linha l = (Linha)item;
+        return criaPonto(getX1Linha(l), getY1Linha(l));
+    }
+    else if (tipo == 4) {
+        Texto t = (Texto)item;
+        return getP1Texto(t);
+    }
+    return NULL; // Outros tipos não possuem ponto 1
+}
+
+
+Ponto getP2Item(Item item, int tipo) {
+    if (tipo == 3) { // Linha
+        Linha l = (Linha)item;
+        return criaPonto(getX2Linha(l), getY2Linha(l));
+    }
+    else if (tipo == 4) {
+        Texto t = (Texto)item;
+        return getP2Texto(t);
+    }
+    return NULL; // Outros tipos não possuem ponto 1
+}
+
+double areaLinha(Item item, int tipo) {
+    if (tipo == 3) { // Linha
+        Linha l = (Linha)item;
+        return getAreaLinha(l);
+    }
+    else if (tipo == 4) {
+        Texto t = (Texto)item;
+        return getAreaTexto(t);
+    }
+    return 0.0; // Outros tipos não possuem área de linha
+}
+
+char *getCorbLinha(Item item, int tipo) {
+    if (tipo == 3) { // Linha
+        Linha l = (Linha)item;
+        return getCorLinha(l);
+    }
+    else if (tipo == 4) {
+        Texto t = (Texto)item;
+        return getCorbTexto(t);
+    }
+    return NULL; // Outros tipos não possuem cor de linha
+}
+
+
+char *getCorpLinha(Item item, int tipo) {
+    if (tipo == 3) { // Linha
+        Linha l = (Linha)item;
+        return getCorLinha(l);
+    }
+    else if (tipo == 4) {
+        Texto t = (Texto)item;
+        return getCorpTexto(t);
+    }
+    return NULL; // Outros tipos não possuem cor de linha
 }
 
 /**
@@ -35,6 +98,7 @@ void processaQry(FILE *fileq, Fila filasaida, FILE *filesaidaquery, Fila filaOri
     int iesq, idir;
     float x, y, x1, y1, x2, y2;
     char a;
+    char mododisp;
 
     // Inicializa as pilhas
     for (j=0; j<100; j++) {
@@ -84,6 +148,8 @@ void processaQry(FILE *fileq, Fila filasaida, FILE *filesaidaquery, Fila filaOri
             while(!pilhavazia(pilhadodisparador)) {
                 pilhadodisparador = botao(listadisp[i], a);
                 printf("Disparando um objeto: %d\n", tipoatualnodisparo(listadisp[i]));
+                // TODO verificar se é para escrever o item antes de disparar ou depois do disparo na sua posição final
+                escreveItemTxt(itemAtualNoDisparo(listadisp[i]), tipoatualnodisparo(listadisp[i]), arqtxt);
                 adicionar(&filasaida, disparar(listadisp[i], x1, y1), tipoatualnodisparo(listadisp[i]));
                 x1 += x2;
                 y1 += y2;
@@ -101,9 +167,14 @@ void processaQry(FILE *fileq, Fila filasaida, FILE *filesaidaquery, Fila filaOri
         }
         else if (!strcmp(comando, "dsp")) {
             double nx, ny;
-            fscanf(fileq, "%i %lf %lf", &i, &nx, &ny);
+            fscanf(fileq, "%i %lf %lf %c", &i, &nx, &ny, &mododisp);
             printf("Disparando um objeto: %d\n", tipoatualnodisparo(listadisp[i]));
-            adicionar(&filasaida, disparar(listadisp[i], nx, ny), tipoatualnodisparo(listadisp[i]));
+            fprintf(arqtxt, "[*] dsp %d %.2lf %.2lf %c\n", i, nx, ny, mododisp);
+            escreveItemTxt(itemAtualNoDisparo(listadisp[i]), tipoatualnodisparo(listadisp[i]), arqtxt);
+            Item itemdisparado = disparar(listadisp[i], nx, ny);
+            int tipodisparado = tipoatualnodisparo(listadisp[i]);
+            adicionar(&filasaida, itemdisparado, tipodisparado);
+            fprintf(arqtxt,"Posicao apos disparo: (%.2lf, %.2lf)\n\n", getXDisparador(listadisp[i]) + nx, getYDisparador(listadisp[i]) + ny);
         }
         else if (!strcmp(comando, "calc")) {
             printf("REALIZANDO CALC\n");
@@ -219,15 +290,88 @@ Fila executaCalc(Fila filasaida, Fila filaOriginal, FILE *filesaidaquery) {
                  adicionar(&filaOriginal, ri, tipo_i);
                 adicionar(&filaOriginal, cj, tipo_j);
             }
-           
-
         }
+        else if (linhaOuTexto(tipo_i) && linhaOuTexto(tipo_j)) { // Linha e linha (que podem ser tanto textos como linhas, mas aqui são tratados como linhas)
+            printf("DUAS LINHAS\n");
+            Item li = item_i;
+            Item lj = item_j;
+            printf("DUAS LINHAS AFTER\n");
+            if (linhasSobrepoem(li, lj, tipo_i, tipo_j)) {
+                printf("Linhas/Textos se sobrepõem!\n");
+                if (areaLinha(lj, tipo_j) >= areaLinha(li, tipo_i)) {
+                    printf("Linha/Texto J é maior ou igual. Esmagando o Linha/Texto I.\n");
+                    adicionar(&filaOriginal, lj, tipo_j);
+                } else {
+                    printf("Linha/Texto J é menor. Invertendo cores e clonando.\n");
+                    // Invertendo cores
+                    char *corb_li = getCorbLinha(li, tipo_i);
+                    char *corp_li = getCorpLinha(li, tipo_i);
+                    if (tipo_j == 3) { // Linha
+                        Linha lj_linha = (Linha)lj;
+                        setCorLinha(lj_linha, corp_li); // Altera a cor da linha para a cor de preenchimento do li
+                    } else if (tipo_j == 4) { // Texto
+                        Texto lj_texto = (Texto)lj;
+                        setCorbTexto(lj_texto, corp_li); // Altera a cor de borda do texto para a cor de preenchimento do li
+                    }
+                    // Clonando
+                    Item clone_li;
+                    if (tipo_i == 3) { // Linha
+                        Linha li_linha = (Linha)li;
+                        clone_li = cloneLinha(li_linha, 1);
+                    } else if (tipo_i == 4) { // Texto
+                        Texto li_texto = (Texto)li;
+                        clone_li = cloneTexto(li_texto, 1);
+                    }
+                    adicionar(&filaOriginal, li, tipo_i);
+                    adicionar(&filaOriginal, lj, tipo_j);
+                    adicionar(&filaOriginal, clone_li, tipo_i);
+                }
+            } else {
+                printf("Linhas/Textos não se sobrepõem.\n");
+                adicionar(&filaOriginal, li, tipo_i);
+                adicionar(&filaOriginal, lj, tipo_j);
+            }
+        }
+        // else if (tipo_i == 1 && linhaOuTexto(tipo_j)) { // Circulo e linha/texto
+        //     Circulo ci = (Circulo)item_i;
+        //     Item lj = item_j;
+        //     // Implementar lógica de sobreposição círculo-linha/texto se necessário
+        //     printf("Círculo e Linha/Texto não possuem lógica de sobreposição implementada.\n");
+            
+            
+        // }
+        // else if (linhaOuTexto(tipo_i) && tipo_j == 1) { // Linha/texto e círculo
+        //     Item li = item_i;
+        //     Circulo cj = (Circulo)item_j;
+        //     // Implementar lógica de sobreposição linha/texto-círculo se necessário
+        //     printf("Linha/Texto e Círculo não possuem lógica de sobreposição implementada.\n");
+            
+        // }
+        // else if (tipo_i == 2 && linhaOuTexto(tipo_j)) { // Retângulo e linha/texto
+        //     Retangulo ri = (Retangulo)item_i;
+        //     Item lj = item_j;
+        //     // Implementar lógica de sobreposição retângulo-linha/texto se necessário
+        //     printf("Retângulo e Linha/Texto não possuem lógica de sobreposição implementada.\n");
+            
+        // }
+        // else if (linhaOuTexto(tipo_i) && tipo_j == 2) { // Linha/texto e retângulo
+        //     Item li = item_i;
+        //     Retangulo rj = (Retangulo)item_j;
+        //     // Implementar lógica de sobreposição linha/texto-retângulo se necessário
+        //     printf("Linha/Texto e Retângulo não possuem lógica de sobreposição implementada.\n");
+            
+        // }
         
         printf("Adicionando item do tipo %d de volta à fila original.\n", tipo);
         //adicionar(&filaOriginal, item, tipo);
     }
     return filaOriginal;
 }
+
+int linhaOuTexto(int tipo) {
+    return (tipo == 3 || tipo == 4);
+}
+
 
 int retangulosSobrepoem(Retangulo r1, Retangulo r2) {
     double x1_min = getXRetangulo(r1);
@@ -287,4 +431,64 @@ int circuloRetanguloSobrepoem(Circulo c, Retangulo r) {
     // Se a distância for menor que o raio, há sobreposição
     double distanceSquared = (distanceX * distanceX) + (distanceY * distanceY);
     return distanceSquared < (radius * radius);
+}
+
+int linhasSobrepoem(Item l1, Item l2, int tipo1, int tipo2) {
+    printf("A PONTOS OBTIDOS\n");
+    Ponto p1 = getP1Item(l1, tipo1);
+    Ponto p2 = getP2Item(l2, tipo2);
+    printf("PONTOS OBTIDOS\n");
+    double p1x1 = getX(p1);
+    double p1y1 = getY(p1);
+    double p1x2 = getX(p1);
+    double p1y2 = getY(p1);
+
+    double p2x1 = getX(p2);
+    double p2y1 = getY(p2);
+    double p2x2 = getX(p2);
+    double p2y2 = getY(p2);
+
+    const double EPS = 1e-9;
+
+    // Orientações (área com sinal dos triângulos)
+    double o1 = (p1x2 - p1x1)*(p2y1 - p1y1) - (p1y2 - p1y1)*(p2x1 - p1x1);
+    double o2 = (p1x2 - p1x1)*(p2y2 - p1y1) - (p1y2 - p1y1)*(p2x2 - p1x1);
+    double o3 = (p2x2 - p2x1)*(p1y1 - p2y1) - (p2y2 - p2y1)*(p1x1 - p2x1);
+    double o4 = (p2x2 - p2x1)*(p1y2 - p2y1) - (p2y2 - p2y1)*(p1x2 - p2x1);
+
+    // Sinais com tolerância
+    int s1 = (o1 >  EPS) - (o1 < -EPS);
+    int s2 = (o2 >  EPS) - (o2 < -EPS);
+    int s3 = (o3 >  EPS) - (o3 < -EPS);
+    int s4 = (o4 >  EPS) - (o4 < -EPS);
+
+    // Caso geral: cruzam estritamente
+    if (s1*s2 < 0 && s3*s4 < 0) return 1;
+
+    // Casos de toque/sobreposição colinear:
+    // C em AB
+    if (s1 == 0 &&
+        p2x1 >= fmin(p1x1, p1x2) - EPS && p2x1 <= fmax(p1x1, p1x2) + EPS &&
+        p2y1 >= fmin(p1y1, p1y2) - EPS && p2y1 <= fmax(p1y1, p1y2) + EPS)
+        return 1;
+
+    // D em AB
+    if (s2 == 0 &&
+        p2x2 >= fmin(p1x1, p1x2) - EPS && p2x2 <= fmax(p1x1, p1x2) + EPS &&
+        p2y2 >= fmin(p1y1, p1y2) - EPS && p2y2 <= fmax(p1y1, p1y2) + EPS)
+        return 1;
+
+    // A em CD
+    if (s3 == 0 &&
+        p1x1 >= fmin(p2x1, p2x2) - EPS && p1x1 <= fmax(p2x1, p2x2) + EPS &&
+        p1y1 >= fmin(p2y1, p2y2) - EPS && p1y1 <= fmax(p2y1, p2y2) + EPS)
+        return 1;
+
+    // B em CD
+    if (s4 == 0 &&
+        p1x2 >= fmin(p2x1, p2x2) - EPS && p1x2 <= fmax(p2x1, p2x2) + EPS &&
+        p1y2 >= fmin(p2y1, p2y2) - EPS && p1y2 <= fmax(p2y1, p2y2) + EPS)
+        return 1;
+        
+    return 0; // Placeholder: implementar lógica real se necessário
 }

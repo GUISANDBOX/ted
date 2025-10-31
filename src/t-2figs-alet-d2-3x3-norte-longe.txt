@@ -1,0 +1,195 @@
+[*] lc 6 6
+retangulo  5
+ancora: (131.91, 379.57)
+largura: 52.54
+atura: 72.30
+borda: #454837
+preenchimento: #0088aa
+area: 3798.63
+
+retangulo  6
+ancora: (339.11, 234.43)
+largura: 33.05
+atura: 29.45
+borda: #ccff00
+preenchimento: #ffcc00
+area: 973.46
+
+
+texto 7
+Âncora: (123.499702, 471.903381)
+Cores borda/preenchimento: #ffff00/#66ff00 
+Texto:  catecatecatecatecatecatecate
+ 
+Família/Peso/Tamanho: sans/normal/12 
+Area: 600.000000 
+
+linha 8
+P1: (158.333115, 348.046082)
+P2: (210.602783, 427.264435)
+Cor: #ffff00 
+Area: 189.817446 
+
+texto 9
+Âncora: (472.070618, 258.193176)
+Cores borda/preenchimento: #800080/#ffcc00 
+Texto:  catecatecatecatecate
+ 
+Família/Peso/Tamanho: sans/normal/12 
+Area: 440.000000 
+
+linha 10
+P1: (257.260651, 305.990845)
+P2: (279.967010, 346.381073)
+Cor: #800080 
+Area: 92.670369 
+[*] lc 8 6
+
+linha 11
+P1: (476.319641, 415.177521)
+P2: (492.792267, 489.523438)
+Cor: #454837 
+Area: 152.297902 
+
+linha 12
+P1: (324.902100, 470.874725)
+P2: (345.825775, 555.762695)
+Cor: #454837 
+Area: 174.857286 
+
+linha 13
+P1: (350.518738, 129.037704)
+P2: (370.442688, 168.817535)
+Cor: #800080 
+Area: 88.980869 
+
+circulo 14
+ancora em (255.530334, 298.250610)
+raio: 29.6 
+borda: #ffff00 
+preenchimento: #66ff00 
+area: 2744.69 
+
+texto 15
+Âncora: (420.222534, 224.748505)
+Cores borda/preenchimento: #454837/#decd87 
+Texto:  abaabaabaabaaba
+ 
+Família/Peso/Tamanho: sans/normal/12 
+Area: 340.000000 
+retangulo  16
+ancora: (430.83, 104.10)
+largura: 45.06
+atura: 75.92
+borda: #ffff00
+preenchimento: #ffcc00
+area: 3420.90
+
+[*] shft 3 d 1
+
+linha 10
+P1: (257.260651, 305.990845)
+P2: (279.967010, 346.381073)
+Cor: #800080 
+Area: 92.670369 
+[*] shft 5 e 1
+retangulo  16
+ancora: (430.83, 104.10)
+largura: 45.06
+atura: 75.92
+borda: #ffff00
+preenchimento: #ffcc00
+area: 3420.90
+
+[*] shft 5 e 1
+
+texto 15
+Âncora: (420.222534, 224.748505)
+Cores borda/preenchimento: #454837/#decd87 
+Texto:  abaabaabaabaaba
+ 
+Família/Peso/Tamanho: sans/normal/12 
+Area: 340.000000 
+[*] dsp 5 -387.78 6.74 i
+
+texto 15
+Âncora: (420.222534, 224.748505)
+Cores borda/preenchimento: #454837/#decd87 
+Texto:  abaabaabaabaaba
+ 
+Família/Peso/Tamanho: sans/normal/12 
+Area: 340.000000 
+Posicao apos disparo: (197.50, 572.50)
+
+[*] shft 5 e 1
+
+circulo 14
+ancora em (255.530334, 298.250610)
+raio: 29.6 
+borda: #ffff00 
+preenchimento: #66ff00 
+area: 2744.69 
+[*] dsp 5 -312.78 91.74 i
+
+circulo 14
+ancora em (255.530334, 298.250610)
+raio: 29.6 
+borda: #ffff00 
+preenchimento: #66ff00 
+area: 2744.69 
+Posicao apos disparo: (272.50, 657.50)
+
+[*] shft 5 e 1
+
+linha 13
+P1: (350.518738, 129.037704)
+P2: (370.442688, 168.817535)
+Cor: #800080 
+Area: 88.980869 
+[*] dsp 5 -237.78 176.74 i
+
+linha 13
+P1: (350.518738, 129.037704)
+P2: (370.442688, 168.817535)
+Cor: #800080 
+Area: 88.980869 
+Posicao apos disparo: (347.50, 742.50)
+
+
+texto 9
+Âncora: (472.070618, 258.193176)
+Cores borda/preenchimento: #800080/#ffcc00 
+Texto:  catecatecatecatecate
+ 
+Família/Peso/Tamanho: sans/normal/12 
+Area: 440.000000 
+
+linha 8
+P1: (158.333115, 348.046082)
+P2: (210.602783, 427.264435)
+Cor: #ffff00 
+Area: 189.817446 
+
+texto 7
+Âncora: (123.499702, 471.903381)
+Cores borda/preenchimento: #ffff00/#66ff00 
+Texto:  catecatecatecatecatecatecate
+ 
+Família/Peso/Tamanho: sans/normal/12 
+Area: 600.000000 
+retangulo  6
+ancora: (339.11, 234.43)
+largura: 33.05
+atura: 29.45
+borda: #ccff00
+preenchimento: #ffcc00
+area: 973.46
+
+retangulo  5
+ancora: (131.91, 379.57)
+largura: 52.54
+atura: 72.30
+borda: #454837
+preenchimento: #0088aa
+area: 3798.63
+

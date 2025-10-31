@@ -75,7 +75,7 @@ void setCorbCirculo(Circulo c, char corb[100]) {
 Circulo clonecirculo(Circulo c, int novo_id) {
     struct sCirculo *circ = c;
     Ponto centro_clone = criaPonto(getX(circ->centro), getY(circ->centro));
-    Circulo novo = criaCirculo(centro_clone, circ->raio, circ->corb, circ->corp, novo_id);
+    Circulo novo = criaCirculo(centro_clone, circ->raio, circ->corp, circ->corb, novo_id);
     return novo;
 }
 
