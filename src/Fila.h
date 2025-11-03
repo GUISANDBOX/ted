@@ -20,4 +20,7 @@ void exibirfila(Fila f, FILE *arqnovo);
 int filavazia(Fila f);
 //verifica se a fila está vazia
 
+int getMaiorIdFIla(Fila f);
+
+
 #endif

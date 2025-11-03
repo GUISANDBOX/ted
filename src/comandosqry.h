@@ -21,8 +21,8 @@ int circulosSobrepoem(Circulo c1, Circulo c2);
 
 int circuloRetanguloSobrepoem(Circulo c, Retangulo r);
 
-Fila executaCalc(Fila filasaida, Fila filaOriginal, FILE *filesaidaquery);
-
+Fila executaCalc(Fila filasaida, Fila filaOriginal, FILE *filesaidaquery, FILE *arqtxt, int *totaldeformasesmagadas, int *totaldeformasclonadas, double *pontuacaofinal);
+ 
 int linhasSobrepoem(Item l1, Item l2, int tipo1, int tipo2);
 
 
@@ -41,4 +41,9 @@ char *getCorbLinha(Item item, int tipo);
 char *getCorpLinha(Item item, int tipo);
 
 
+int retanguloLinhaSobrepoem(Retangulo r, Item l, int tipo_l);
+
+int circuloLinhaSobrepoem(Circulo c, Item l, int tipo_l);
+
+int getIdLinhaOuTexto(Item li, int tipo_i);
 #endif

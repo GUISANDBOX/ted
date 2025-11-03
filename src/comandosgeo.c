@@ -8,7 +8,7 @@
 
 static char currentFFamily[100] = "sans";
 static char currentFWeight[100] = "normal";
-static char currentFSize[100] = "12";
+static char currentFSize[100] = "12"; 
 
 Fila processaGeo(FILE *arqgeo, Fila fila, FILE *arqsvg) {
     char comando[32];

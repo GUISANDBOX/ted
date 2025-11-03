@@ -41,4 +41,6 @@ Linha cloneLinha(Linha l, int novo_id);
 
 void escreveLinhaTxt(Linha l, FILE *arq);
 
+int getIdLinha(Linha l);
+
 #endif

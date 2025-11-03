@@ -129,3 +129,8 @@ void escreveLinhaTxt(Linha l, FILE *arq) {
     fprintf(arq, "Cor: %s \n", lin->cor);
     fprintf(arq, "Area: %lf \n", getAreaLinha(lin));
 }
+
+int getIdLinha(Linha l) {
+    struct sLinha *lin = l;
+    return lin->id;
+}

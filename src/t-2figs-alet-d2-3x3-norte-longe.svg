@@ -7,6 +7,9 @@
 <text x="197.500000" y="572.500000" stroke="#800080" fill="#ffcc00" fill-opacity="0.5" text-anchor="middle" font-family="sans" font-weight="normal" font-size="12" > catecatecatecatecate
 </text>
 <line x1="347.500031" y1="742.500000" x2="367.423981" y2="782.279846" fill-opacity="0.5" stroke="#800080" />
+<circle r="29.557775" cx="272.500031" cy="657.500000" fill-opacity="0.5" stroke="#ffff00" fill="#66ff00" />
+<text x="197.500031" y="572.500000" stroke="#454837" fill="#decd87" fill-opacity="0.5" text-anchor="end" font-family="sans" font-weight="normal" font-size="12" > abaabaabaabaaba
+</text>
 <text x="474.586670" y="65.662422" stroke="#ccff00" fill="#decd87" fill-opacity="0.5" text-anchor="start" font-family="sans" font-weight="normal" font-size="12" > abaabaabaabaabaabaabaaba
 </text>
 <line x1="397.164307" y1="382.085907" x2="436.009979" y2="436.578430" fill-opacity="0.5" stroke="#ccff00" />

@@ -137,3 +137,8 @@ Ponto getP2Texto(Texto t) {
         return criaPonto(xt + 10.0 * comp/ 2, yt);
     }
 }
+
+int getIdTexto(Texto t) {
+    struct sTexto *tex = t;
+    return tex->id;
+}

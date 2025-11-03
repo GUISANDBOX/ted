@@ -52,7 +52,7 @@ void setCorbRetangulo(Retangulo r, char corb[100]);
 void setCorpRetangulo(Retangulo r, char corp[100]);
 //altera a cor de preenchimento do retângulo
 
-Retangulo cloneretangulo(Retangulo r, int inverte);
+Retangulo cloneretangulo(Retangulo r, int id_novo);
 //clona o retângulo
 
 void escreveRetanguloTxt(Retangulo r, FILE *arq);

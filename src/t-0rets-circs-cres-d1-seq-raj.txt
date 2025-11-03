@@ -1,0 +1,403 @@
+[*] lc 3 24
+
+circulo 5
+ancora em (309.089661, 363.006622)
+raio: 14.2 
+borda: #784421 
+preenchimento: #00aa88 
+area: 637.94 
+retangulo  6
+ancora: (20.73, 33.81)
+largura: 28.50
+atura: 27.70
+borda: #784421
+preenchimento: #00aa88
+area: 789.45
+
+
+circulo 7
+ancora em (141.592346, 155.184509)
+raio: 16.0 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 804.25 
+retangulo  8
+ancora: (77.40, 337.86)
+largura: 32.00
+atura: 30.40
+borda: #6600ff
+preenchimento: #c8ab37
+area: 972.80
+
+
+circulo 9
+ancora em (191.047226, 80.626434)
+raio: 17.8 
+borda: #784421 
+preenchimento: #00aa88 
+area: 989.80 
+retangulo  10
+ancora: (414.83, 445.44)
+largura: 35.50
+atura: 33.10
+borda: #784421
+preenchimento: #00aa88
+area: 1175.05
+
+
+circulo 11
+ancora em (459.364136, 223.292053)
+raio: 19.5 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 1194.59 
+retangulo  12
+ancora: (399.87, 250.47)
+largura: 39.00
+atura: 35.80
+borda: #6600ff
+preenchimento: #c8ab37
+area: 1396.20
+
+
+circulo 13
+ancora em (238.559601, 406.024902)
+raio: 21.2 
+borda: #784421 
+preenchimento: #00aa88 
+area: 1418.63 
+retangulo  14
+ancora: (153.15, 271.37)
+largura: 42.50
+atura: 38.50
+borda: #784421
+preenchimento: #00aa88
+area: 1636.25
+
+
+circulo 15
+ancora em (174.204590, 492.195160)
+raio: 23.0 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 1661.90 
+retangulo  16
+ancora: (333.05, 452.96)
+largura: 46.00
+atura: 41.20
+borda: #6600ff
+preenchimento: #c8ab37
+area: 1895.20
+
+
+circulo 17
+ancora em (419.328857, 101.161949)
+raio: 24.8 
+borda: #784421 
+preenchimento: #00aa88 
+area: 1924.42 
+retangulo  18
+ancora: (268.64, 59.23)
+largura: 49.50
+atura: 43.90
+borda: #784421
+preenchimento: #00aa88
+area: 2173.05
+
+
+circulo 19
+ancora em (116.347282, 242.977020)
+raio: 26.5 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 2206.18 
+retangulo  20
+ancora: (500.36, 212.37)
+largura: 53.00
+atura: 46.60
+borda: #6600ff
+preenchimento: #c8ab37
+area: 2469.80
+
+
+circulo 21
+ancora em (216.977188, 270.732697)
+raio: 28.2 
+borda: #784421 
+preenchimento: #00aa88 
+area: 2507.19 
+retangulo  22
+ancora: (442.10, 371.93)
+largura: 56.50
+atura: 49.30
+borda: #784421
+preenchimento: #00aa88
+area: 2785.45
+
+
+circulo 23
+ancora em (97.038597, 223.186432)
+raio: 30.0 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 2827.43 
+retangulo  24
+ancora: (169.75, 346.48)
+largura: 60.00
+atura: 52.00
+borda: #6600ff
+preenchimento: #c8ab37
+area: 3120.00
+
+
+circulo 25
+ancora em (357.734863, 351.628876)
+raio: 31.8 
+borda: #784421 
+preenchimento: #00aa88 
+area: 3166.92 
+retangulo  26
+ancora: (354.12, 336.50)
+largura: 63.50
+atura: 54.70
+borda: #784421
+preenchimento: #00aa88
+area: 3473.45
+
+
+circulo 27
+ancora em (297.443878, 420.626282)
+raio: 33.5 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 3525.65 
+retangulo  28
+ancora: (402.36, 155.71)
+largura: 67.00
+atura: 57.40
+borda: #6600ff
+preenchimento: #c8ab37
+area: 3845.80
+
+retangulo  28
+ancora: (402.36, 155.71)
+largura: 67.00
+atura: 57.40
+borda: #6600ff
+preenchimento: #c8ab37
+area: 3845.80
+
+
+circulo 27
+ancora em (297.443878, 420.626282)
+raio: 33.5 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 3525.65 
+retangulo  26
+ancora: (354.12, 336.50)
+largura: 63.50
+atura: 54.70
+borda: #784421
+preenchimento: #00aa88
+area: 3473.45
+
+
+circulo 25
+ancora em (357.734863, 351.628876)
+raio: 31.8 
+borda: #784421 
+preenchimento: #00aa88 
+area: 3166.92 
+retangulo  24
+ancora: (169.75, 346.48)
+largura: 60.00
+atura: 52.00
+borda: #6600ff
+preenchimento: #c8ab37
+area: 3120.00
+
+
+circulo 23
+ancora em (97.038597, 223.186432)
+raio: 30.0 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 2827.43 
+retangulo  22
+ancora: (442.10, 371.93)
+largura: 56.50
+atura: 49.30
+borda: #784421
+preenchimento: #00aa88
+area: 2785.45
+
+
+circulo 21
+ancora em (216.977188, 270.732697)
+raio: 28.2 
+borda: #784421 
+preenchimento: #00aa88 
+area: 2507.19 
+retangulo  20
+ancora: (500.36, 212.37)
+largura: 53.00
+atura: 46.60
+borda: #6600ff
+preenchimento: #c8ab37
+area: 2469.80
+
+
+circulo 19
+ancora em (116.347282, 242.977020)
+raio: 26.5 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 2206.18 
+retangulo  18
+ancora: (268.64, 59.23)
+largura: 49.50
+atura: 43.90
+borda: #784421
+preenchimento: #00aa88
+area: 2173.05
+
+
+circulo 17
+ancora em (419.328857, 101.161949)
+raio: 24.8 
+borda: #784421 
+preenchimento: #00aa88 
+area: 1924.42 
+retangulo  16
+ancora: (333.05, 452.96)
+largura: 46.00
+atura: 41.20
+borda: #6600ff
+preenchimento: #c8ab37
+area: 1895.20
+
+
+circulo 15
+ancora em (174.204590, 492.195160)
+raio: 23.0 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 1661.90 
+retangulo  14
+ancora: (153.15, 271.37)
+largura: 42.50
+atura: 38.50
+borda: #784421
+preenchimento: #00aa88
+area: 1636.25
+
+
+circulo 13
+ancora em (238.559601, 406.024902)
+raio: 21.2 
+borda: #784421 
+preenchimento: #00aa88 
+area: 1418.63 
+retangulo  12
+ancora: (399.87, 250.47)
+largura: 39.00
+atura: 35.80
+borda: #6600ff
+preenchimento: #c8ab37
+area: 1396.20
+
+
+circulo 11
+ancora em (459.364136, 223.292053)
+raio: 19.5 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 1194.59 
+retangulo  10
+ancora: (414.83, 445.44)
+largura: 35.50
+atura: 33.10
+borda: #784421
+preenchimento: #00aa88
+area: 1175.05
+
+
+circulo 9
+ancora em (191.047226, 80.626434)
+raio: 17.8 
+borda: #784421 
+preenchimento: #00aa88 
+area: 989.80 
+retangulo  8
+ancora: (77.40, 337.86)
+largura: 32.00
+atura: 30.40
+borda: #6600ff
+preenchimento: #c8ab37
+area: 972.80
+
+
+circulo 7
+ancora em (141.592346, 155.184509)
+raio: 16.0 
+borda: #6600ff 
+preenchimento: #c8ab37 
+area: 804.25 
+retangulo  6
+ancora: (20.73, 33.81)
+largura: 28.50
+atura: 27.70
+borda: #784421
+preenchimento: #00aa88
+area: 789.45
+
+
+circulo 5
+ancora em (309.089661, 363.006622)
+raio: 14.2 
+borda: #784421 
+preenchimento: #00aa88 
+area: 637.94 
+Retângulo e Círculo se sobrepõem!
+Retângulo 28 eh menor. Invertendo cores e clonando 28 com novo ID 29.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 26 eh menor. Invertendo cores e clonando 26 com novo ID 30.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 24 eh menor. Invertendo cores e clonando 24 com novo ID 31.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 22 eh menor. Invertendo cores e clonando 22 com novo ID 32.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 20 eh menor. Invertendo cores e clonando 20 com novo ID 33.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 18 eh menor. Invertendo cores e clonando 18 com novo ID 34.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 16 eh menor. Invertendo cores e clonando 16 com novo ID 35.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 14 eh menor. Invertendo cores e clonando 14 com novo ID 36.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 12 eh menor. Invertendo cores e clonando 12 com novo ID 37.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 10 eh menor. Invertendo cores e clonando 10 com novo ID 38.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 8 eh menor. Invertendo cores e clonando 8 com novo ID 39.
+Area esmagada no round: 0.000000
+Retângulo e Círculo se sobrepõem!
+Retângulo 6 eh menor. Invertendo cores e clonando 6 com novo ID 40.
+Area esmagada no round: 0.000000
+
+Pontuação final: 0.000000
+Número total de instruções executadas: 5
+Número total de disparos: 24
+Número total de formas esmagadas: 0
+Número total de formas clonadas: 12

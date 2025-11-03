@@ -1,6 +1,9 @@
 <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
 <rect x="200.000005" y="577.499985" width="52.542675" height="72.296075" fill-opacity="0.5" stroke="#454837" fill="#0088aa" />
 <text x="198.750000" y="575.000000" stroke="red" fill="red" fill-opacity="0.5" text-anchor="middle" font-family="Arial" font-weight="normal" font-size="12" >*</text>
+<text x="197.500000" y="572.500000" stroke="#ffff00" fill="#66ff00" fill-opacity="0.5" text-anchor="end" font-family="sans" font-weight="normal" font-size="12" > catecatecatecatecatecatecate
+</text>
+<line x1="197.500031" y1="572.500000" x2="213.972656" y2="646.845947" fill-opacity="0.5" stroke="#454837" />
 <text x="474.586670" y="65.662422" stroke="#ccff00" fill="#decd87" fill-opacity="0.5" text-anchor="start" font-family="sans" font-weight="normal" font-size="12" > abaabaabaabaabaabaabaaba
 </text>
 <line x1="397.164307" y1="382.085907" x2="436.009979" y2="436.578430" fill-opacity="0.5" stroke="#ccff00" />

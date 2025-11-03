@@ -45,4 +45,7 @@ Ponto getP1Texto(Texto t);
 
 Ponto getP2Texto(Texto t);
 
+int getIdTexto(Texto t);
+//retorna o id do texto
+
 #endif

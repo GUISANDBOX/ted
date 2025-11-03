@@ -105,10 +105,9 @@ void setCorpRetangulo(Retangulo r, char corp[100]) {
 }
 //altera a cor de preenchimento do retângulo
 
-Retangulo cloneretangulo(Retangulo r, int inverte) {
+Retangulo cloneretangulo(Retangulo r, int id_novo) {
     struct sRetangulo *ret = r;
-    return (inverte==1) ? criaRetangulo(ret->x, ret->y, ret->w, ret->h, ret->corp, ret->corb, ret->id) : 
-                          criaRetangulo(ret->x, ret->y, ret->w, ret->h, ret->corb, ret->corp, ret->id);
+    return criaRetangulo(ret->x, ret->y, ret->w, ret->h, ret->corb, ret->corp, id_novo);
 }
 
 void escreveRetanguloTxt(Retangulo r, FILE *arq) {

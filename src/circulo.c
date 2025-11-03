@@ -97,7 +97,6 @@ char* getCorpCirculo(Circulo c) {
 }
 //retorna a cor de preenchimento do círculo
 
-
 void setCorpCirculo(Circulo c, char corp[100]) {
     struct sCirculo *circ = c;
     strcpy(circ->corp, corp);

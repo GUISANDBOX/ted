@@ -193,3 +193,9 @@ borda: #454837
 preenchimento: #0088aa
 area: 3798.63
 
+
+Pontuação final: 0.000000
+Número total de instruções executadas: 16
+Número total de disparos: 8
+Número total de formas esmagadas: 0
+Número total de formas clonadas: 0

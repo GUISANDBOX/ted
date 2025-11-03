@@ -92,3 +92,32 @@ int filavazia(Fila f) {
     }
     return 0;
 }
+
+int getMaiorIdFIla(Fila f) {
+    sNoItem *atual= (sNoItem *)f;
+    int id_maior = 0;
+    while(atual!=NULL){
+        if (atual->tipo==1) {
+            if (getIdCirculo((Circulo)atual->item) > id_maior) {
+                id_maior = getIdCirculo((Circulo)atual->item);
+            }
+        }
+        else if (atual->tipo==2) {
+            if (getIdRetangulo((Retangulo)atual->item) > id_maior) {
+                id_maior = getIdRetangulo((Retangulo)atual->item);
+            }
+        }
+        else if (atual->tipo==3) {
+            if (getIdLinha((Linha)atual->item) > id_maior) {
+                id_maior = getIdLinha((Linha)atual->item);
+            }
+        }
+        else if (atual->tipo==4) {
+            if (getIdTexto((Texto)atual->item) > id_maior) {
+                id_maior = getIdTexto((Texto)atual->item);
+            }
+        }
+        atual=atual->prox;
+    }
+    return id_maior;
+}
