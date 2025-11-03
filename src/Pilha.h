@@ -20,4 +20,6 @@ void exibir(Pilha p);
 //verifica se a pilha está vazia.
 int pilhavazia(Pilha p);
 
+void limpaPilha(Pilha *p);
+
 #endif

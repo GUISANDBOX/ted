@@ -214,6 +214,12 @@ void processaQry(FILE *fileq, Fila filasaida, FILE *filesaidaquery, Fila filaOri
     exibirfila(filaOriginal, filesaidaquery);
     fprintf(filesaidaquery, "</svg>\n");
     fprintf(arqtxt, "\nPontuação final: %lf\nNúmero total de instruções executadas: %d\nNúmero total de disparos: %d\nNúmero total de formas esmagadas: %d\nNúmero total de formas clonadas: %d", pontuacaofinal, totaldeinstrucoes, totaldedisparos, totaldeformasesmagadas, totaldeformasclonadas);
+
+    // Limpa os disparadores e pilhas
+    for (j=0; j<100; j++) {
+        limpaDisparador(&listadisp[j]);
+        limpaPilha(&listacarr[j]);
+    }
 }
 
 Fila executaCalc(Fila filasaida, Fila filaOriginal, FILE *filesaidaquery, FILE *arqtxt, int *totaldeformasesmagadas, int *totaldeformasclonadas, double *pontuacaofinal) {

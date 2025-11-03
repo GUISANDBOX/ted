@@ -121,3 +121,17 @@ int getMaiorIdFIla(Fila f) {
     }
     return id_maior;
 }
+
+void limpaFila(Fila *f) {
+    sNoItem **inicio = (sNoItem **)f;
+    sNoItem *atual = *inicio;
+    sNoItem *prox;
+
+    while (atual != NULL) {
+        prox = atual->prox;
+        free(atual);
+        atual = prox;
+    }
+
+    *inicio = NULL; // Define a fila como vazia após limpar
+}

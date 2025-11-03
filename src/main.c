@@ -162,6 +162,9 @@ int main(int argc, char *argv[]) {
     Fila filasaida = criafila(0);
     processaQry(fileq, filasaida, filesaidaquery, fila, filesaidatxt);
 
+    limpaFila(&fila);
+    limpaFila(&filasaida);
+    
     fclose(fileq);
     fclose(filesaidaquery);
     fclose(filesaidatxt);

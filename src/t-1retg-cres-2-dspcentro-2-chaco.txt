@@ -1,0 +1,316 @@
+[*] lc 1 2
+retangulo  5
+ancora: (377.79, 636.41)
+largura: 13.50
+atura: 17.30
+borda: #784421
+preenchimento: #00aa88
+area: 233.55
+
+retangulo  6
+ancora: (308.28, 245.22)
+largura: 17.00
+atura: 19.60
+borda: #6600ff
+preenchimento: #c8ab37
+area: 333.20
+
+[*] lc 2 2
+retangulo  7
+ancora: (143.72, 234.56)
+largura: 20.50
+atura: 21.90
+borda: #784421
+preenchimento: #00aa88
+area: 448.95
+
+retangulo  8
+ancora: (107.42, 523.54)
+largura: 24.00
+atura: 24.20
+borda: #6600ff
+preenchimento: #c8ab37
+area: 580.80
+
+[*] lc 3 2
+retangulo  9
+ancora: (124.85, 400.84)
+largura: 27.50
+atura: 26.50
+borda: #784421
+preenchimento: #00aa88
+area: 728.75
+
+retangulo  10
+ancora: (223.48, 188.21)
+largura: 31.00
+atura: 28.80
+borda: #6600ff
+preenchimento: #c8ab37
+area: 892.80
+
+[*] lc 4 2
+retangulo  11
+ancora: (666.15, 261.43)
+largura: 34.50
+atura: 31.10
+borda: #784421
+preenchimento: #00aa88
+area: 1072.95
+
+retangulo  12
+ancora: (314.59, 437.09)
+largura: 38.00
+atura: 33.40
+borda: #6600ff
+preenchimento: #c8ab37
+area: 1269.20
+
+[*] lc 5 2
+retangulo  13
+ancora: (456.46, 172.06)
+largura: 41.50
+atura: 35.70
+borda: #784421
+preenchimento: #00aa88
+area: 1481.55
+
+retangulo  14
+ancora: (148.19, 644.71)
+largura: 45.00
+atura: 38.00
+borda: #6600ff
+preenchimento: #c8ab37
+area: 1710.00
+
+[*] lc 6 2
+retangulo  15
+ancora: (301.02, 328.84)
+largura: 48.50
+atura: 40.30
+borda: #784421
+preenchimento: #00aa88
+area: 1954.55
+
+retangulo  16
+ancora: (207.82, 517.40)
+largura: 52.00
+atura: 42.60
+borda: #6600ff
+preenchimento: #c8ab37
+area: 2215.20
+
+[*] lc 7 2
+retangulo  17
+ancora: (160.60, 396.54)
+largura: 55.50
+atura: 44.90
+borda: #784421
+preenchimento: #00aa88
+area: 2491.95
+
+retangulo  18
+ancora: (123.96, 406.16)
+largura: 59.00
+atura: 47.20
+borda: #6600ff
+preenchimento: #c8ab37
+area: 2784.80
+
+[*] lc 8 2
+retangulo  19
+ancora: (417.18, 465.97)
+largura: 62.50
+atura: 49.50
+borda: #784421
+preenchimento: #00aa88
+area: 3093.75
+
+retangulo  20
+ancora: (567.86, 681.48)
+largura: 66.00
+atura: 51.80
+borda: #6600ff
+preenchimento: #c8ab37
+area: 3418.80
+
+[*] shft 1 e 1
+retangulo  8
+ancora: (107.42, 523.54)
+largura: 24.00
+atura: 24.20
+borda: #6600ff
+preenchimento: #c8ab37
+area: 580.80
+
+[*] shft 1 d 1
+retangulo  6
+ancora: (308.28, 245.22)
+largura: 17.00
+atura: 19.60
+borda: #6600ff
+preenchimento: #c8ab37
+area: 333.20
+
+[*] shft 1 e 1
+[*] shft 1 d 1
+[*] shft 1 e 1
+[*] dsp 1 366.12 359.93 v
+Posicao apos disparo: (376.12, 369.93)
+
+[*] shft 1 e 1
+retangulo  7
+ancora: (143.72, 234.56)
+largura: 20.50
+atura: 21.90
+borda: #784421
+preenchimento: #00aa88
+area: 448.95
+
+[*] dsp 1 370.18 367.19 v
+retangulo  7
+ancora: (143.72, 234.56)
+largura: 20.50
+atura: 21.90
+borda: #784421
+preenchimento: #00aa88
+area: 448.95
+
+Posicao apos disparo: (380.18, 377.19)
+
+[*] shft 2 d 1
+retangulo  10
+ancora: (223.48, 188.21)
+largura: 31.00
+atura: 28.80
+borda: #6600ff
+preenchimento: #c8ab37
+area: 892.80
+
+[*] dsp 2 -366.12 359.93 v
+retangulo  10
+ancora: (223.48, 188.21)
+largura: 31.00
+atura: 28.80
+borda: #6600ff
+preenchimento: #c8ab37
+area: 892.80
+
+Posicao apos disparo: (343.88, 369.93)
+
+[*] shft 2 d 1
+retangulo  9
+ancora: (124.85, 400.84)
+largura: 27.50
+atura: 26.50
+borda: #784421
+preenchimento: #00aa88
+area: 728.75
+
+[*] dsp 2 -362.06 367.19 v
+retangulo  9
+ancora: (124.85, 400.84)
+largura: 27.50
+atura: 26.50
+borda: #784421
+preenchimento: #00aa88
+area: 728.75
+
+Posicao apos disparo: (347.94, 377.19)
+
+[*] shft 3 e 1
+retangulo  16
+ancora: (207.82, 517.40)
+largura: 52.00
+atura: 42.60
+borda: #6600ff
+preenchimento: #c8ab37
+area: 2215.20
+
+[*] dsp 3 -366.12 -359.93 v
+retangulo  16
+ancora: (207.82, 517.40)
+largura: 52.00
+atura: 42.60
+borda: #6600ff
+preenchimento: #c8ab37
+area: 2215.20
+
+Posicao apos disparo: (343.88, 350.07)
+
+[*] shft 3 e 1
+retangulo  15
+ancora: (301.02, 328.84)
+largura: 48.50
+atura: 40.30
+borda: #784421
+preenchimento: #00aa88
+area: 1954.55
+
+[*] dsp 3 -365.32 -352.68 v
+retangulo  15
+ancora: (301.02, 328.84)
+largura: 48.50
+atura: 40.30
+borda: #784421
+preenchimento: #00aa88
+area: 1954.55
+
+Posicao apos disparo: (344.68, 357.32)
+
+[*] shft 4 d 1
+retangulo  18
+ancora: (123.96, 406.16)
+largura: 59.00
+atura: 47.20
+borda: #6600ff
+preenchimento: #c8ab37
+area: 2784.80
+
+[*] dsp 4 366.12 -359.93 v
+retangulo  18
+ancora: (123.96, 406.16)
+largura: 59.00
+atura: 47.20
+borda: #6600ff
+preenchimento: #c8ab37
+area: 2784.80
+
+Posicao apos disparo: (376.12, 350.07)
+
+[*] shft 4 d 1
+retangulo  17
+ancora: (160.60, 396.54)
+largura: 55.50
+atura: 44.90
+borda: #784421
+preenchimento: #00aa88
+area: 2491.95
+
+[*] dsp 4 366.92 -352.68 v
+retangulo  17
+ancora: (160.60, 396.54)
+largura: 55.50
+atura: 44.90
+borda: #784421
+preenchimento: #00aa88
+area: 2491.95
+
+Posicao apos disparo: (376.92, 357.32)
+
+Area esmagada no round: 0.000000
+Retângulos se sobrepõem!
+Retângulo 9 eh menor. Invertendo cores e clonando 10 com novo ID 20.
+Area esmagada no round: 0.000000
+Retângulos se sobrepõem!
+Retângulo 15 eh menor. Invertendo cores e clonando 16 com novo ID 21.
+Area esmagada no round: 0.000000
+Retângulos se sobrepõem!
+Retângulo 17 eh menor. Invertendo cores e clonando 18 com novo ID 22.
+Area esmagada no round: 0.000000
+
+Pontuação final: 0.000000
+Número total de instruções executadas: 37
+Número total de disparos: 8
+Número total de formas esmagadas: 0
+Número total de formas clonadas: 3

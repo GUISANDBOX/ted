@@ -77,3 +77,17 @@ int pilhavazia(Pilha p){
 Pilha criapilha(){
     return NULL;
 }
+
+void limpaPilha(Pilha *p) {
+    sNoItem **topo = (sNoItem **)p;
+    sNoItem *atual = *topo;
+    sNoItem *prox;
+
+    while (atual != NULL) {
+        prox = atual->prox;
+        free(atual);
+        atual = prox;
+    }
+
+    *topo = NULL; // A pilha agora está vazia
+}

@@ -22,5 +22,6 @@ int filavazia(Fila f);
 
 int getMaiorIdFIla(Fila f);
 
+void limpaFila(Fila *f);
 
 #endif

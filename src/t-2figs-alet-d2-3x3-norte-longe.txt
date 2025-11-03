@@ -193,6 +193,14 @@ borda: #454837
 preenchimento: #0088aa
 area: 3798.63
 
+Linha/Texto e Círculo não se sobrepõem.
+Area esmagada no round: 0.000000
+Linhas/Textos não se sobrepõem.
+Area esmagada no round: 0.000000
+Linhas/Textos não se sobrepõem.
+Area esmagada no round: 0.000000
+Retângulos não se sobrepõem.
+Area esmagada no round: 0.000000
 
 Pontuação final: 0.000000
 Número total de instruções executadas: 16

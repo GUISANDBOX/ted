@@ -163,3 +163,13 @@ double getYDisparador(Disparador d) {
     struct sDisparador *disp = (struct sDisparador *)d;
     return disp->y;
 }
+
+void limpaDisparador(Disparador *d) {
+    struct sDisparador *disp = (struct sDisparador *)(*d);
+    if (disp != NULL) {
+        // limpaPilha(&(disp->esq));
+        // limpaPilha(&(disp->dir));
+        
+        *d = NULL;
+    }
+}

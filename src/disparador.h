@@ -42,4 +42,6 @@ double getXDisparador(Disparador d);
 double getYDisparador(Disparador d);
 //retorna a coordenada y do disparador
 
+void limpaDisparador(Disparador *d);
+
 #endif
