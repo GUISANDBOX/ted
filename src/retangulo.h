@@ -21,18 +21,14 @@ double areaRetangulo(Retangulo r);
 double areaRetangulo(Retangulo r);
 //calcula a área do retângulo
 
-
 double getXRetangulo(Retangulo r);
 //retorna a coordenada x do retângulo  
-
 
 double getYRetangulo(Retangulo r);
 //retorna a coordenada y do retângulo
 
-
 double getWRetangulo(Retangulo r);
 //retorna a largura do retângulo
-
 
 double getHRetangulo(Retangulo r);
 //retorna a altura do retângulo

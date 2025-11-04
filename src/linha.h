@@ -38,9 +38,12 @@ void setCorLinha(Linha l, char cor[]);
 //altera a cor da linha
 
 Linha cloneLinha(Linha l, int novo_id);
+//clona a linha
 
 void escreveLinhaTxt(Linha l, FILE *arq);
+//escreve a linha em um arquivo txt
 
 int getIdLinha(Linha l);
+//retorna o id da linha
 
 #endif

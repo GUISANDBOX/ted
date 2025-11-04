@@ -37,7 +37,6 @@ Ponto getP1Item(Item item, int tipo) {
     return NULL; // Outros tipos não possuem ponto 1
 }
 
-
 Ponto getP2Item(Item item, int tipo) {
     if (tipo == 3) { // Linha
         Linha l = (Linha)item;

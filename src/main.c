@@ -6,7 +6,6 @@
 #include "retangulo.h"
 #include "Pilha.h"
 #include "Fila.h"
-#include "Lista.h"
 #include "linha.h"
 #include "texto.h"
 #include "disparador.h"

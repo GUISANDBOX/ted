@@ -32,8 +32,10 @@ void setCorbCirculo(Circulo c, char corb[100]);
 //altera a cor da borda do círculo
 
 Circulo clonecirculo(Circulo c, int novo_id);
+//clona o círculo
 
-int getIdCirculo(Circulo c); 
+int getIdCirculo(Circulo c);
+//retorna o id do círculo
 
 char* getCorbCirculo(Circulo c);
 //retorna a cor de borda do círculo
@@ -45,5 +47,6 @@ void setCorpCirculo(Circulo c, char corp[100]);
 //altera a cor de preenchimento do círculo
 
 void escreveCirculoTxt(Circulo c, FILE *arq);
+//escreve o círculo em um arquivo txt
 
 #endif

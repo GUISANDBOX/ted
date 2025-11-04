@@ -43,5 +43,6 @@ double getYDisparador(Disparador d);
 //retorna a coordenada y do disparador
 
 void limpaDisparador(Disparador *d);
+//limpa o disparador
 
 #endif

@@ -26,6 +26,7 @@ double getYTexto(Texto c);
 //retorna a coordenada y
 
 Texto cloneTexto(Texto t, int novo_id);
+//clona o texto
 
 char *getCorbTexto(Texto t);
 //retorna a cor de borda do texto
@@ -40,10 +41,13 @@ void setCorpTexto(Texto t, char corp[100]);
 //altera a cor de preenchimento do texto
 
 void escreveTextoTxt(Texto t, FILE *arq);
+//escreve o texto em um arquivo txt
 
 Ponto getP1Texto(Texto t);
+//retorna o ponto 1 do texto
 
 Ponto getP2Texto(Texto t);
+//retorna o ponto 2 do texto
 
 int getIdTexto(Texto t);
 //retorna o id do texto

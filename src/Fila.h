@@ -3,7 +3,7 @@
 
 //programa para filas.
 typedef void* Item; // Define que cada item da fila é uma fila genérica
-typedef void* Fila;
+typedef void* Fila; // Define o tipo Fila
 
 Fila criafila();
 //cria a fila
@@ -21,7 +21,9 @@ int filavazia(Fila f);
 //verifica se a fila está vazia
 
 int getMaiorIdFIla(Fila f);
+//retorna o maior id presente na fila
 
 void limpaFila(Fila *f);
+//limpa a fila
 
 #endif
